@@ -1,0 +1,90 @@
+[
+  {
+    "id": 1,
+    "name": "Strength Training",
+    "description": "Build raw power and muscle mass with progressive overload principles guided by elite coaches.",
+    "icon": "Dumbbell",
+    "image": "https://images.pexels.com/photos/2261477/pexels-photo-2261477.jpeg?auto=compress&cs=tinysrgb&w=1200&dpr=1",
+    "duration": "60 min",
+    "level": "All Levels",
+    "color": "#FF6A00",
+    "category": "strength"
+  },
+  {
+    "id": 2,
+    "name": "HIIT Blast",
+    "description": "High-intensity interval training that torches fat and spikes your metabolism in record time.",
+    "icon": "Zap",
+    "image": "https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&w=1200&dpr=1",
+    "duration": "45 min",
+    "level": "Intermediate",
+    "color": "#FF4500",
+    "category": "cardio"
+  },
+  {
+    "id": 3,
+    "name": "Yoga Flow",
+    "description": "Restore balance, flexibility, and mental clarity through guided yoga and mindfulness sessions.",
+    "icon": "Wind",
+    "image": "https://images.pexels.com/photos/3822906/pexels-photo-3822906.jpeg?auto=compress&cs=tinysrgb&w=1200&dpr=1",
+    "duration": "60 min",
+    "level": "Beginner",
+    "color": "#FF8C00",
+    "category": "wellness"
+  },
+  {
+    "id": 4,
+    "name": "Boxing & Combat",
+    "description": "Learn real boxing techniques while getting an incredible full-body workout. Build power and confidence.",
+    "icon": "Target",
+    "image": "https://images.pexels.com/photos/4761792/pexels-photo-4761792.jpeg?auto=compress&cs=tinysrgb&w=1200&dpr=1",
+    "duration": "75 min",
+    "level": "All Levels",
+    "color": "#FF6A00",
+    "category": "combat"
+  },
+  {
+    "id": 5,
+    "name": "CrossFit",
+    "description": "Functional fitness combining Olympic lifts, gymnastics, and metabolic conditioning for peak performance.",
+    "icon": "Activity",
+    "image": "https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg?auto=compress&cs=tinysrgb&w=1200&dpr=1",
+    "duration": "60 min",
+    "level": "Advanced",
+    "color": "#FF4500",
+    "category": "strength"
+  },
+  {
+    "id": 6,
+    "name": "Zumba Dance",
+    "description": "Party your way to fitness with high-energy Latin music and dance moves that burn serious calories.",
+    "icon": "Music",
+    "image": "https://images.pexels.com/photos/3775576/pexels-photo-3775576.jpeg?auto=compress&cs=tinysrgb&w=1200&dpr=1",
+    "duration": "50 min",
+    "level": "Beginner",
+    "color": "#FF8C00",
+    "category": "cardio"
+  },
+  {
+    "id": 7,
+    "name": "Nutrition Coaching",
+    "description": "Personalized meal plans and nutritional guidance from certified dietitians for optimal results.",
+    "icon": "Leaf",
+    "image": "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=1200&dpr=1",
+    "duration": "30 min",
+    "level": "All Levels",
+    "color": "#FF6A00",
+    "category": "wellness"
+  },
+  {
+    "id": 8,
+    "name": "Personal Training",
+    "description": "One-on-one sessions customized entirely to your goals, fitness level, and schedule.",
+    "icon": "User",
+    "image": "https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1200&dpr=1",
+    "duration": "60 min",
+    "level": "All Levels",
+    "color": "#FF4500",
+    "category": "personal"
+  }
+]

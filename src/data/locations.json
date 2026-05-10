@@ -1,0 +1,38 @@
+[
+  {
+    "id": "coonoor",
+    "name": "Coonoor",
+    "address": "12 Wellington Road, Coonoor, Tamil Nadu 643101",
+    "phone": "+91 86673 36409",
+    "email": "martisflavin@gmail.com",
+    "hours": "5:00 AM – 10:00 PM",
+    "image": "https://images.pexels.com/photos/1552252/pexels-photo-1552252.jpeg?auto=compress&cs=tinysrgb&w=1200&dpr=1",
+    "members": 480,
+    "trainers": 1,
+    "area": "6,000 sq ft"
+  },
+  {
+    "id": "manjoor",
+    "name": "Manjoor",
+    "address": "45 Main Street, Manjoor, Tamil Nadu 624301",
+    "phone": "+91 86673 36409",
+    "email": "martisflavin@gmail.com",
+    "hours": "5:30 AM – 10:00 PM",
+    "image": "https://images.pexels.com/photos/1954524/pexels-photo-1954524.jpeg?auto=compress&cs=tinysrgb&w=1200&dpr=1",
+    "members": 320,
+    "trainers": 1,
+    "area": "4,500 sq ft"
+  },
+  {
+    "id": "salem",
+    "name": "Selas",
+    "address": "88 Anna Nagar, Salem, Tamil Nadu 636001",
+    "phone": "+91 86673 36409",
+    "email": "martisflavin@gmail.com",
+    "hours": "5:00 AM – 11:00 PM",
+    "image": "https://images.pexels.com/photos/260352/pexels-photo-260352.jpeg?auto=compress&cs=tinysrgb&w=1200&dpr=1",
+    "members": 720,
+    "trainers": 1,
+    "area": "9,000 sq ft"
+  }
+]

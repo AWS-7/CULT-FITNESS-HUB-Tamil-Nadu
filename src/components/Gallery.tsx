@@ -20,6 +20,12 @@ const generalGalleryImages = [
   { id: 6, src: '/images/1778160703643.jpg', category: 'studio', title: 'Yoga Studio', likes: 534 },
   { id: 7, src: '/images/1778160703634.jpg', category: 'training', title: 'Boxing Ring', likes: 389 },
   { id: 8, src: '/images/1778160703629.jpg', category: 'studio', title: 'Recovery Zone', likes: 298 },
+  { id: 9, src: '/images/Screenshot 2026-05-10 134051.png', category: 'training', title: 'Coonoor Training Area', likes: 167 },
+  { id: 10, src: '/images/Screenshot 2026-05-10 134106.png', category: 'equipment', title: 'Coonoor Equipment Zone', likes: 234 },
+  { id: 11, src: '/images/Screenshot 2026-05-10 134117.png', category: 'studio', title: 'Coonoor Studio Space', likes: 189 },
+  { id: 12, src: '/images/Screenshot 2026-05-10 134132.png', category: 'training', title: 'Coonoor Weight Training', likes: 201 },
+  { id: 13, src: '/images/Screenshot 2026-05-10 134142.png', category: 'equipment', title: 'Coonoor Cardio Section', likes: 156 },
+  { id: 14, src: '/images/Screenshot 2026-05-10 134153.png', category: 'studio', title: 'Coonoor Group Fitness', likes: 267 },
 ];
 
 const salemGalleryImages = [
@@ -55,6 +61,23 @@ const manjoorGalleryImages = [
   { id: 212, src: '/images/manjoor-647.jpg?v=2026051001', category: 'studio', title: 'Manjoor Lounge', likes: 245 },
 ];
 
+const coonoorGalleryImages = [
+  { id: 301, src: '/images/Screenshot 2026-05-10 134051.png', category: 'training', title: 'Coonoor Training Area', likes: 167 },
+  { id: 302, src: '/images/Screenshot 2026-05-10 134106.png', category: 'equipment', title: 'Coonoor Equipment Zone', likes: 234 },
+  { id: 303, src: '/images/Screenshot 2026-05-10 134117.png', category: 'studio', title: 'Coonoor Studio Space', likes: 189 },
+  { id: 304, src: '/images/Screenshot 2026-05-10 134132.png', category: 'training', title: 'Coonoor Weight Training', likes: 201 },
+  { id: 305, src: '/images/Screenshot 2026-05-10 134142.png', category: 'equipment', title: 'Coonoor Cardio Section', likes: 156 },
+  { id: 306, src: '/images/Screenshot 2026-05-10 134153.png', category: 'studio', title: 'Coonoor Group Fitness', likes: 267 },
+  { id: 307, src: '/images/Screenshot 2026-05-10 134201.png', category: 'training', title: 'Coonoor Personal Training', likes: 134 },
+  { id: 308, src: '/images/Screenshot 2026-05-10 134213.png', category: 'equipment', title: 'Coonoor Gym Floor', likes: 289 },
+  { id: 309, src: '/images/Screenshot 2026-05-10 134220.png', category: 'studio', title: 'Coonoor Yoga Space', likes: 145 },
+  { id: 310, src: '/images/Screenshot 2026-05-10 134302.png', category: 'training', title: 'Coonoor Strength Area', likes: 178 },
+  { id: 311, src: '/images/Screenshot 2026-05-10 134311.png', category: 'equipment', title: 'Coonoor Machines', likes: 245 },
+  { id: 312, src: '/images/Screenshot 2026-05-10 134329.png', category: 'studio', title: 'Coonoor Lounge', likes: 156 },
+  { id: 313, src: '/images/Screenshot 2026-05-10 134339.png', category: 'training', title: 'Coonoor Functional Training', likes: 201 },
+  { id: 314, src: '/images/Screenshot 2026-05-10 134347.png', category: 'equipment', title: 'Coonoor Free Weights', likes: 167 },
+];
+
 export default function Gallery() {
   const { darkMode, currentBranch } = useApp();
   const { ref, inView } = useInView();
@@ -64,6 +87,7 @@ export default function Gallery() {
   const galleryImages = useMemo(() => 
     currentBranch?.id === 'salem' ? salemGalleryImages : 
     currentBranch?.id === 'manjoor' ? manjoorGalleryImages : 
+    currentBranch?.id === 'coonoor' ? coonoorGalleryImages :
     generalGalleryImages,
     [currentBranch]
   );
@@ -111,6 +135,8 @@ export default function Gallery() {
               <>Explore Our <span className="text-gradient">Salem Fitness World</span></>
             ) : currentBranch?.id === 'manjoor' ? (
               <>Explore Our <span className="text-gradient">Manjoor Fitness World</span></>
+            ) : currentBranch?.id === 'coonoor' ? (
+              <>Explore Our <span className="text-gradient">Coonoor Fitness World</span></>
             ) : (
               <>Explore Our <span className="text-gradient">Fitness World</span></>
             )}

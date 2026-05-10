@@ -6,7 +6,7 @@ import Programs from './pages/Programs';
 import Admin from './pages/Admin';
 import AdminDashboard from './pages/AdminDashboard';
 import BranchDetail from './pages/BranchDetail';
-import Gallery from './pages/Gallery';
+import GalleryPage from './pages/GalleryPage';
 
 export default function App() {
   return (
@@ -16,7 +16,7 @@ export default function App() {
           <Route path="/" element={<EntryPage />} />
           <Route path="/home" element={<Home />} />
           <Route path="/programs" element={<Programs />} />
-          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/gallery" element={<GalleryPage />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="/admin/dashboard" element={<AdminDashboard />} />
           <Route path="/branch/:branchId" element={<BranchDetail />} />

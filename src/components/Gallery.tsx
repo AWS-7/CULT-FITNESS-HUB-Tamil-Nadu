@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
-import { Camera } from 'lucide-react';
-import { useMemo, useRef, useEffect } from 'react';
+import { Camera, Play, Pause, ArrowRight } from 'lucide-react';
+import { useMemo, useRef, useEffect, useState } from 'react';
 import { useApp } from '../context/AppContext';
 import { useInView } from '../hooks/useInView';
 
@@ -54,6 +54,7 @@ export default function Gallery() {
   const { currentBranch, darkMode } = useApp();
   const { ref, inView } = useInView();
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const [isAutoScroll, setIsAutoScroll] = useState(true);
   
   const galleryImages = useMemo(() => 
     currentBranch?.id === 'selas' ? salemGalleryImages : 
@@ -65,9 +66,9 @@ export default function Gallery() {
 
   // Auto-scroll functionality - only for mobile
   useEffect(() => {
-    // Only enable auto-scroll on mobile devices (lg breakpoint and below)
+    // Only enable auto-scroll on mobile devices (lg breakpoint and below) and when auto-scroll is enabled
     const isMobile = window.innerWidth < 1024;
-    if (!isMobile) return;
+    if (!isMobile || !isAutoScroll) return;
 
     const scrollContainer = scrollContainerRef.current;
     if (!scrollContainer) return;
@@ -100,22 +101,12 @@ export default function Gallery() {
       }
     };
 
-    // Start scrolling
     startScroll();
-
-    // Pause scrolling on hover
-    const handleMouseEnter = () => stopScroll();
-    const handleMouseLeave = () => startScroll();
-
-    scrollContainer.addEventListener('mouseenter', handleMouseEnter);
-    scrollContainer.addEventListener('mouseleave', handleMouseLeave);
 
     return () => {
       stopScroll();
-      scrollContainer.removeEventListener('mouseenter', handleMouseEnter);
-      scrollContainer.removeEventListener('mouseleave', handleMouseLeave);
     };
-  }, [galleryImages]);
+  }, [isAutoScroll]);
 
   return (
     <section id="gallery" className={`py-20 ${darkMode ? 'bg-bg-black' : 'bg-gray-50'}`}>
@@ -182,11 +173,47 @@ export default function Gallery() {
         </div>
 
         <div className="lg:hidden">
-          {/* Mobile Auto-scrolling Gallery */}
+          {/* Mobile Scroll Controls */}
+          <div className="flex items-center justify-between mb-4 px-2">
+            <div className="flex items-center gap-2">
+              <button
+                onClick={() => setIsAutoScroll(!isAutoScroll)}
+                className={`flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium transition-colors ${
+                  isAutoScroll 
+                    ? 'bg-primary text-white' 
+                    : 'bg-gray-200 text-gray-700 dark:bg-gray-700 dark:text-gray-300'
+                }`}
+              >
+                {isAutoScroll ? (
+                  <>
+                    <Pause className="w-3 h-3" />
+                    Auto Scroll ON
+                  </>
+                ) : (
+                  <>
+                    <Play className="w-3 h-3" />
+                    Manual Scroll
+                  </>
+                )}
+              </button>
+              <span className="text-xs text-gray-500 dark:text-gray-400">
+                {isAutoScroll ? 'Auto-scrolling' : 'Swipe to navigate'}
+              </span>
+            </div>
+            <button
+              onClick={() => window.open('/gallery', '_blank')}
+              className="flex items-center gap-1 px-3 py-1.5 bg-primary text-white rounded-full text-xs font-medium hover:bg-primary-dark transition-colors"
+            >
+              View All
+              <ArrowRight className="w-3 h-3" />
+            </button>
+          </div>
+          
+          {/* Mobile Gallery */}
           <div 
             ref={scrollContainerRef}
-            className="overflow-x-auto scrollbar-hide"
-            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            className={`overflow-x-auto ${isAutoScroll ? 'scrollbar-hide' : ''}`}
+            style={{ scrollbarWidth: isAutoScroll ? 'none' : 'auto', msOverflowStyle: isAutoScroll ? 'none' : 'auto' }}
           >
             <div className="flex gap-4 py-4" style={{ width: 'max-content' }}>
               {galleryImages.concat(galleryImages).map((image, index) => (

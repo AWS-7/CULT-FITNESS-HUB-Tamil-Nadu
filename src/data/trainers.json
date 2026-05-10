@@ -95,5 +95,18 @@
     "instagram": "#",
     "linkedin": "#",
     "certifications": ["ACE-CPT", "NASM-CES"]
+  },
+  {
+    "id": 9,
+    "name": "Rajesh",
+    "role": "Manjoor Branch Coach",
+    "location": "manjoor",
+    "experience": "7 years",
+    "speciality": "Strength Training & Cardio",
+    "image": "/images/manjoor-coach-rajesh.jpg",
+    "phone": "7904017302",
+    "instagram": "#",
+    "linkedin": "#",
+    "certifications": ["NSCA-CPT", "ACE-CPT"]
   }
 ]

@@ -6,28 +6,49 @@ export default function Preloader({ onLoadingComplete }: { onLoadingComplete: ()
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Network-based loading simulation
+    // Fast loading simulation
     const simulateNetworkLoading = async () => {
-      const loadingSteps = [
-        { progress: 20, delay: 300 },
-        { progress: 40, delay: 400 },
-        { progress: 60, delay: 500 },
-        { progress: 80, delay: 300 },
-        { progress: 100, delay: 400 }
-      ];
+      try {
+        const loadingSteps = [
+          { progress: 25, delay: 100 },
+          { progress: 50, delay: 100 },
+          { progress: 75, delay: 100 },
+          { progress: 100, delay: 100 }
+        ];
 
-      for (const step of loadingSteps) {
-        await new Promise(resolve => setTimeout(resolve, step.delay));
-        setLoadingProgress(step.progress);
+        for (const step of loadingSteps) {
+          await new Promise(resolve => setTimeout(resolve, step.delay));
+          setLoadingProgress(step.progress);
+        }
+
+        // Minimal delay for smooth transition
+        await new Promise(resolve => setTimeout(resolve, 100));
+        setIsLoading(false);
+        
+        // Ensure callback is called
+        if (onLoadingComplete && typeof onLoadingComplete === 'function') {
+          onLoadingComplete();
+        }
+      } catch (error) {
+        // Fallback - complete loading immediately
+        setIsLoading(false);
+        if (onLoadingComplete && typeof onLoadingComplete === 'function') {
+          onLoadingComplete();
+        }
       }
-
-      // Additional delay for smooth transition
-      await new Promise(resolve => setTimeout(resolve, 500));
-      setIsLoading(false);
-      onLoadingComplete();
     };
 
     simulateNetworkLoading();
+    
+    // Fallback timeout - complete loading after 3 seconds max
+    const fallbackTimeout = setTimeout(() => {
+      setIsLoading(false);
+      if (onLoadingComplete && typeof onLoadingComplete === 'function') {
+        onLoadingComplete();
+      }
+    }, 3000);
+
+    return () => clearTimeout(fallbackTimeout);
   }, [onLoadingComplete]);
 
   return (

@@ -42,8 +42,8 @@ export default function BookingModal() {
       `I'm interested in booking a free trial session. Please contact me to schedule an appointment.`
     );
     
-    // WhatsApp number (you can change this to your business WhatsApp number)
-    const whatsappNumber = '9080700642'; // From the footer
+    // WhatsApp number for booking trial requests
+    const whatsappNumber = '918667336409'; // +91 866 733 6409
     
     // Open WhatsApp with pre-filled message
     window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');

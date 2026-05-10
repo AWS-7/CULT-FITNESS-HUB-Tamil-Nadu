@@ -16,6 +16,28 @@ export default function EntryPage() {
   const navigate = useNavigate();
   const { locations, recordVisit } = useApp();
 
+  const handleBranchNavigation = (branchId: string) => {
+    try {
+      // Validate branch ID
+      if (!branchId || typeof branchId !== 'string') {
+        return;
+      }
+
+      // Check if branch exists
+      const branchExists = locations.some(loc => loc.id === branchId);
+      if (!branchExists) {
+        return;
+      }
+
+      // Navigate to branch page
+      const targetUrl = `/home?branch=${branchId}`;
+      navigate(targetUrl);
+    } catch (error) {
+      // Fallback navigation
+      window.location.href = `/home?branch=${branchId}`;
+    }
+  };
+
   useEffect(() => {
     // Record entry page visit once per session
     if (!sessionStorage.getItem('visited_entry')) {
@@ -63,9 +85,11 @@ export default function EntryPage() {
             {locations.map((loc, i) => (
               <button
                 key={loc.id}
-                onClick={() => navigate(`/home?branch=${loc.id}`)}
-                className="group relative flex items-center gap-4 p-3 sm:p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-primary/50 hover:bg-white/10 transition-all duration-300 text-left w-full active:scale-[0.98]"
+                onClick={() => handleBranchNavigation(loc.id)}
+                onTouchStart={() => handleBranchNavigation(loc.id)}
+                className="group relative flex items-center gap-4 p-3 sm:p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-primary/50 hover:bg-white/10 transition-all duration-300 text-left w-full active:scale-[0.98] cursor-pointer touch-manipulation"
                 style={{ animationDelay: `${i * 100}ms` }}
+                type="button"
               >
                 {/* Branch Image - Small thumbnail on mobile */}
                 <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-xl overflow-hidden flex-shrink-0">

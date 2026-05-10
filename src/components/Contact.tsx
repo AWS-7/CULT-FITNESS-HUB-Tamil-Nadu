@@ -21,12 +21,6 @@ export default function Contact() {
     setShowModal(false);
   };
 
-  const inputClass = `w-full px-4 py-3 rounded-xl border transition-all duration-300 outline-none text-sm
-    ${darkMode
-      ? 'bg-bg-black border-white/10 text-white placeholder-gray-500 focus:border-primary focus:shadow-glow-orange'
-      : 'bg-gray-50 border-gray-200 text-gray-900 placeholder-gray-400 focus:border-primary focus:ring-2 focus:ring-primary/20'
-    }`;
-
   return (
     <section id="contact" className={`py-20 ${darkMode ? 'bg-bg-black' : 'bg-gray-50'} relative overflow-hidden`}>
       {/* Background decoration */}
@@ -311,7 +305,7 @@ export default function Contact() {
                 </div>
                 <div className="rounded-2xl overflow-hidden h-48">
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125426.37461254226!2d78.06225824316406!3d11.664304199999997!2m3!1f0!2f0!3f0!3m2!1i1024%2i768!4f13.1!3m3!1m2!1s0x3babf1cad579c351%3A0x8d5d7b2f4e949879!2sSelas%2C%20Nilgiris!5e0!3m2!1sen%2sin!4v1620000000000"
+                    src="https://maps.google.com/maps?q=Coonoor%2C%20Nilgiris%2C%20Tamil%20Nadu&t=&z=12&ie=UTF8&iwloc=&output=embed"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}

@@ -10,31 +10,40 @@ import AdminDashboard from './pages/AdminDashboard';
 import BranchDetail from './pages/BranchDetail';
 import GalleryPage from './pages/GalleryPage';
 
-export default function App() {
-  const [isLoading, setIsLoading] = useState(true);
+function AppContent() {
+  const [preloaderComplete, setPreloaderComplete] = useState(false);
 
   const handleLoadingComplete = () => {
-    setIsLoading(false);
+    setPreloaderComplete(true);
   };
 
   return (
     <>
-      <Preloader onLoadingComplete={handleLoadingComplete} />
-      <div className={`transition-opacity duration-500 ${isLoading ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
-        <AppProvider>
-          <BrowserRouter>
-            <Routes>
-              <Route path="/" element={<EntryPage />} />
-              <Route path="/home" element={<Home />} />
-              <Route path="/programs" element={<Programs />} />
-              <Route path="/gallery" element={<GalleryPage />} />
-              <Route path="/admin" element={<Admin />} />
-              <Route path="/admin/dashboard" element={<AdminDashboard />} />
-              <Route path="/branch/:branchId" element={<BranchDetail />} />
-            </Routes>
-          </BrowserRouter>
-        </AppProvider>
+      {/* Preloader - only show on initial load */}
+      {!preloaderComplete && <Preloader onLoadingComplete={handleLoadingComplete} />}
+      
+      {/* Main Content - always interactive */}
+      <div className={`transition-opacity duration-500 ${preloaderComplete ? 'opacity-100' : 'opacity-0'}`}>
+        <Routes>
+          <Route path="/" element={<EntryPage />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/programs" element={<Programs />} />
+          <Route path="/gallery" element={<GalleryPage />} />
+          <Route path="/admin" element={<Admin />} />
+          <Route path="/admin/dashboard" element={<AdminDashboard />} />
+          <Route path="/branch/:branchId" element={<BranchDetail />} />
+        </Routes>
       </div>
     </>
+  );
+}
+
+export default function App() {
+  return (
+    <AppProvider>
+      <BrowserRouter>
+        <AppContent />
+      </BrowserRouter>
+    </AppProvider>
   );
 }

@@ -2,7 +2,7 @@
   {
     "id": 1,
     "name": "Vikram Anand",
-    "location": "salem",
+    "location": "all",
     "rating": 5,
     "text": "CULT Fitness Hub completely transformed my life. In 6 months I lost 18kg and gained more confidence than I ever imagined. The trainers here are world-class.",
     "image": "https://images.pexels.com/photos/1212984/pexels-photo-1212984.jpeg?auto=compress&cs=tinysrgb&w=1200&dpr=1",
@@ -12,9 +12,9 @@
   {
     "id": 2,
     "name": "Ananya Krishnan",
-    "location": "coonoor",
+    "location": "all",
     "rating": 5,
-    "text": "The yoga and strength combo at CULT has given me energy I didn't know I had. Priya's guidance is incredible — patient, knowledgeable, and inspiring.",
+    "text": "The yoga and strength combo at CULT has given me energy I didn't know I had. The guidance here is incredible — patient, knowledgeable, and inspiring.",
     "image": "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=1200&dpr=1",
     "program": "Yoga Flow",
     "achievement": "Improved flexibility 200%"
@@ -22,7 +22,7 @@
   {
     "id": 3,
     "name": "Sanjay Mehta",
-    "location": "manjoor",
+    "location": "all",
     "rating": 5,
     "text": "I was skeptical about CrossFit but after 3 months at CULT I'm deadlifting twice my body weight. The community here keeps you accountable and motivated.",
     "image": "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1200&dpr=1",
@@ -32,9 +32,9 @@
   {
     "id": 4,
     "name": "Lakshmi Subramaniam",
-    "location": "salem",
+    "location": "all",
     "rating": 5,
-    "text": "The nutrition coaching combined with personal training is unbeatable. Divya mapped out a plan that actually works with my lifestyle — no crash diets!",
+    "text": "The nutrition coaching combined with personal training is unbeatable. The trainers mapped out a plan that actually works with my lifestyle — no crash diets!",
     "image": "https://images.pexels.com/photos/1065084/pexels-photo-1065084.jpeg?auto=compress&cs=tinysrgb&w=1200&dpr=1",
     "program": "Personal Training",
     "achievement": "Dropped 3 dress sizes"
@@ -42,9 +42,9 @@
   {
     "id": 5,
     "name": "Rajesh Balasubramanian",
-    "location": "coonoor",
+    "location": "all",
     "rating": 5,
-    "text": "Boxing at CULT is not just a workout — it's therapy. Ravi taught me discipline and mental resilience while getting me the best shape of my life at 45.",
+    "text": "Boxing at CULT is not just a workout — it's therapy. The trainers taught me discipline and mental resilience while getting me the best shape of my life at 45.",
     "image": "https://images.pexels.com/photos/697509/pexels-photo-697509.jpeg?auto=compress&cs=tinysrgb&w=1200&dpr=1",
     "program": "Boxing & Combat",
     "achievement": "Best shape at age 45"

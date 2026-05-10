@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Camera } from 'lucide-react';
-import { useMemo } from 'react';
+import { useMemo, useRef, useEffect } from 'react';
 import { useApp } from '../context/AppContext';
 import { useInView } from '../hooks/useInView';
 
@@ -44,6 +44,7 @@ const coonoorGalleryImages = [
 export default function Gallery() {
   const { currentBranch, darkMode } = useApp();
   const { ref, inView } = useInView();
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
   
   const galleryImages = useMemo(() => 
     currentBranch?.id === 'salem' ? salemGalleryImages : 
@@ -52,6 +53,56 @@ export default function Gallery() {
     generalGalleryImages,
     [currentBranch]
   );
+
+  // Auto-scroll functionality
+  useEffect(() => {
+    const scrollContainer = scrollContainerRef.current;
+    if (!scrollContainer) return;
+
+    let scrollAmount = 0;
+    const scrollSpeed = 0.5; // pixels per frame
+    const scrollInterval = 50; // milliseconds between frames
+    let intervalId: NodeJS.Timeout;
+
+    const scroll = () => {
+      if (!scrollContainer) return;
+      
+      scrollAmount += scrollSpeed;
+      
+      // Reset to beginning when reaching the end
+      if (scrollAmount >= scrollContainer.scrollWidth - scrollContainer.clientWidth) {
+        scrollAmount = 0;
+      }
+      
+      scrollContainer.scrollLeft = scrollAmount;
+    };
+
+    const startScroll = () => {
+      intervalId = setInterval(scroll, scrollInterval);
+    };
+
+    const stopScroll = () => {
+      if (intervalId) {
+        clearInterval(intervalId);
+      }
+    };
+
+    // Start scrolling
+    startScroll();
+
+    // Pause scrolling on hover
+    const handleMouseEnter = () => stopScroll();
+    const handleMouseLeave = () => startScroll();
+
+    scrollContainer.addEventListener('mouseenter', handleMouseEnter);
+    scrollContainer.addEventListener('mouseleave', handleMouseLeave);
+
+    return () => {
+      stopScroll();
+      scrollContainer.removeEventListener('mouseenter', handleMouseEnter);
+      scrollContainer.removeEventListener('mouseleave', handleMouseLeave);
+    };
+  }, [galleryImages]);
 
   return (
     <section id="gallery" className={`py-20 ${darkMode ? 'bg-bg-black' : 'bg-gray-50'}`}>
@@ -84,34 +135,41 @@ export default function Gallery() {
           </motion.p>
         </div>
 
-        {/* Gallery Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {galleryImages.map((image, index) => (
-            <motion.div
-              key={image.id}
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={inView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ delay: index * 0.1, duration: 0.5 }}
-              className="group relative overflow-hidden rounded-xl cursor-pointer"
-              whileHover={{ scale: 1.02 }}
-            >
-              <img
-                src={image.src}
-                alt={image.title}
-                className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="absolute bottom-4 left-4 right-4">
-                  <h3 className="text-white font-semibold text-sm mb-1">{image.title}</h3>
-                  <div className="flex items-center justify-between">
-                    <span className="text-white/80 text-xs capitalize">{image.category}</span>
-                    <span className="text-white/80 text-xs">{image.likes} likes</span>
+        {/* Auto-scrolling Gallery */}
+        <div 
+          ref={scrollContainerRef}
+          className="overflow-x-auto scrollbar-hide"
+          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        >
+          <div className="flex gap-6 py-4" style={{ width: 'max-content' }}>
+            {galleryImages.concat(galleryImages).map((image, index) => (
+              <motion.div
+                key={`${image.id}-${index}`}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={inView ? { opacity: 1, scale: 1 } : {}}
+                transition={{ delay: (index % galleryImages.length) * 0.1, duration: 0.5 }}
+                className="group relative overflow-hidden rounded-xl cursor-pointer flex-shrink-0"
+                whileHover={{ scale: 1.02 }}
+                style={{ width: '320px', height: '256px' }}
+              >
+                <img
+                  src={image.src}
+                  alt={image.title}
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <h3 className="text-white font-semibold text-sm mb-1">{image.title}</h3>
+                    <div className="flex items-center justify-between">
+                      <span className="text-white/80 text-xs capitalize">{image.category}</span>
+                      <span className="text-white/80 text-xs">{image.likes} likes</span>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

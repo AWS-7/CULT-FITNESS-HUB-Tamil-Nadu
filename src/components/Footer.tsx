@@ -1,5 +1,6 @@
-import { Flame, Instagram, Facebook, Youtube, Twitter } from 'lucide-react';
+import { Instagram, Facebook, Youtube, Twitter } from 'lucide-react';
 import { useApp } from '../context/AppContext';
+import logoImg from '/images/Screenshot_2026-05-10_140628-removebg-preview.png';
 
 const navLinks = [
   { label: 'Home', href: '#home' },
@@ -27,10 +28,12 @@ export default function Footer() {
         <div className="grid md:grid-cols-3 gap-10">
           {/* Brand */}
           <div>
-            <a href="#home" className="flex items-center gap-2 mb-4">
-              <div className="w-9 h-9 bg-primary rounded-lg flex items-center justify-center shadow-glow-orange">
-                <Flame className="w-5 h-5 text-white" />
-              </div>
+            <a href="#home" className="flex items-center gap-3 mb-4">
+              <img 
+                src={logoImg} 
+                alt="CULT Fitness Hub Logo" 
+                className="w-12 h-12 object-contain"
+              />
               <span className="font-heading text-xl font-bold">
                 <span className="text-primary">CULT</span>
                 <span className={darkMode ? 'text-white' : 'text-gray-900'}> FITNESS HUB</span>

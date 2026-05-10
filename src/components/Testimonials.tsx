@@ -91,7 +91,7 @@ export default function Testimonials() {
                   &ldquo;{t.text}&rdquo;
                 </p>
                 <div className="mt-6 flex items-center gap-2 text-secondary-text text-sm">
-                  <span className="capitalize">{t.location} Branch</span>
+                  <span>All Branches</span>
                 </div>
               </div>
             </div>

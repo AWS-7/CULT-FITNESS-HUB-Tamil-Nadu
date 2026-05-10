@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { MapPin, ArrowRight, Users, Dumbbell, Instagram, Facebook, Youtube, Twitter, Phone, Mail, Clock } from 'lucide-react';
 import { useApp } from '../context/AppContext';
-import logo from '/images/1778161330002.jpg';
+import logo from '/images/1778160703576.jpg';
 import trainers from '../data/trainers.json';
 
 const socials = [

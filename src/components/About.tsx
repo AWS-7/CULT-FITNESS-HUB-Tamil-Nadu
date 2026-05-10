@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { Award, Shield, TrendingUp, Heart } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 import { useInView } from '../hooks/useInView';
-import aboutImage from '/images/1778161330021.jpg';
+import aboutImage from '/images/1778160703587.jpg';
 
 const values = [
   { icon: Award, title: 'World-Class Coaches', desc: 'Internationally certified trainers with 5–15 years of professional experience.' },

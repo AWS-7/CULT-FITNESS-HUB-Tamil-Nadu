@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Sun, Moon, Menu, X } from 'lucide-react';
 import { useApp } from '../context/AppContext';
-import logoImg from '/images/1778161330002.jpg';
+import logoImg from '/images/1778160703582.jpg';
 
 const navLinks = [
   { label: 'Home', href: '#home' },

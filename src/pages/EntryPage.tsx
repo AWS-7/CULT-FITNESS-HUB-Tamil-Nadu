@@ -102,7 +102,14 @@ export default function EntryPage() {
                   
                   {/* Featured Trainer */}
                   {(() => {
-                    const branchTrainer = trainers.find(t => t.location === loc.id);
+                    // Show specific branch coaches
+                    const branchTrainers = {
+                      'salem': trainers.find(t => t.name === 'Bala'),
+                      'coonoor': trainers.find(t => t.name === 'Ronaldo'),
+                      'manjoor': trainers.find(t => t.name === 'Rajesh')
+                    };
+                    const branchTrainer = branchTrainers[loc.id as keyof typeof branchTrainers];
+                    
                     if (branchTrainer) {
                       return (
                         <div className="flex items-center gap-2 mt-2 pt-2 border-t border-white/10">

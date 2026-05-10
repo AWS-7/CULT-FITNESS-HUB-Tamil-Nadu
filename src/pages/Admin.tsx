@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Users, LogOut, Flame, Menu } from 'lucide-react';
+import { Users, LogOut, Flame, Menu, BarChart3 } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 
 function LoginScreen({ onLogin }: { onLogin: () => void }) {
@@ -111,6 +111,13 @@ export default function Admin() {
             <LogOut className="w-4 h-4" />
             Logout
           </button>
+          <a
+            href="/admin/dashboard"
+            className="w-full flex items-center gap-3 px-4 py-2.5 rounded-xl text-sm text-gray-400 hover:bg-primary/10 hover:text-primary transition-all mt-1"
+          >
+            <BarChart3 className="w-4 h-4" />
+            Analytics Dashboard
+          </a>
           <a
             href="/"
             className="w-full flex items-center gap-3 px-4 py-2.5 rounded-xl text-sm text-gray-400 hover:bg-white/5 hover:text-white transition-all mt-1"

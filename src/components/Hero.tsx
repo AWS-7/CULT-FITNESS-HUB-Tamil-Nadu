@@ -22,21 +22,21 @@ const MANJOOR_IMAGES = [
 ];
 
 const SALEM_IMAGES = [
-  '/images/1778161860614.jpg',
-  '/images/1778161860619.jpg',
-  '/images/1778161860626.jpg',
-  '/images/1778161860631.jpg',
-  '/images/1778161860638.jpg',
-  '/images/1778161860643.jpg',
-  '/images/1778161860649.jpg',
-  '/images/1778161860654.jpg',
-  '/images/1778161860660.jpg',
-  '/images/1778161860665.jpg',
-  '/images/1778161860671.jpg',
-  '/images/1778161860678.jpg',
-  '/images/1778161860684.jpg',
-  '/images/1778161860689.jpg',
-  '/images/1778161860695.jpg'
+  '/images/salem-whatsapp-1.jpg',
+  '/images/salem-whatsapp-2.jpg',
+  '/images/salem-whatsapp-3.jpg',
+  '/images/salem-whatsapp-4.jpg',
+  '/images/salem-whatsapp-5.jpg',
+  '/images/salem-whatsapp-6.jpg',
+  '/images/salem-whatsapp-7.jpg',
+  '/images/salem-whatsapp-8.jpg',
+  '/images/salem-whatsapp-9.jpg',
+  '/images/salem-whatsapp-10.jpg',
+  '/images/salem-whatsapp-11.jpg',
+  '/images/salem-whatsapp-12.jpg',
+  '/images/salem-whatsapp-13.jpg',
+  '/images/salem-whatsapp-14.jpg',
+  '/images/salem-whatsapp-15.jpg'
 ];
 
 export default function Hero() {

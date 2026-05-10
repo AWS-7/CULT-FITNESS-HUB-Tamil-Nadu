@@ -59,7 +59,7 @@ export default function Hero() {
     if (currentImages.length > 1) {
       const interval = setInterval(() => {
         setCurrentImageIndex((prev) => (prev + 1) % currentImages.length);
-      }, 5000); // Change image every 5 seconds
+      }, 8000); // Slower rotation for better performance
       
       return () => clearInterval(interval);
     }

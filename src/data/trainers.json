@@ -1,29 +1,5 @@
 [
-  {
-    "id": 1,
-    "name": "Arjun Sharma",
-    "role": "Head Strength Coach",
-    "location": "salem",
-    "experience": "10 years",
-    "speciality": "Powerlifting & Strength",
-    "image": "https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&w=1200&dpr=1",
-    "instagram": "#",
-    "linkedin": "#",
-    "certifications": ["NSCA-CSCS", "NASM-CPT"]
-  },
-  {
-    "id": 2,
-    "name": "Priya Nair",
-    "role": "Yoga & Flexibility Expert",
-    "location": "coonoor",
-    "experience": "7 years",
-    "speciality": "Yoga & Mobility",
-    "image": "https://images.pexels.com/photos/3757004/pexels-photo-3757004.jpeg?auto=compress&cs=tinysrgb&w=1200&dpr=1",
-    "instagram": "#",
-    "linkedin": "#",
-    "certifications": ["RYT-500", "FMS Level 2"]
-  },
-  {
+      {
     "id": 3,
     "name": "Karthik Rajan",
     "role": "HIIT & Conditioning Coach",
@@ -35,31 +11,7 @@
     "linkedin": "#",
     "certifications": ["ACE-CPT", "CrossFit L2"]
   },
-  {
-    "id": 4,
-    "name": "Divya Menon",
-    "role": "Nutrition & Wellness Coach",
-    "location": "salem",
-    "experience": "6 years",
-    "speciality": "Nutrition & Weight Loss",
-    "image": "https://images.pexels.com/photos/3823488/pexels-photo-3823488.jpeg?auto=compress&cs=tinysrgb&w=1200&dpr=1",
-    "instagram": "#",
-    "linkedin": "#",
-    "certifications": ["ISSA Nutritionist", "NASM-CES"]
-  },
-  {
-    "id": 5,
-    "name": "Ravi Kumar",
-    "role": "Boxing & Combat Coach",
-    "location": "coonoor",
-    "experience": "12 years",
-    "speciality": "Boxing & MMA",
-    "image": "https://images.pexels.com/photos/3838389/pexels-photo-3838389.jpeg?auto=compress&cs=tinysrgb&w=1200&dpr=1",
-    "instagram": "#",
-    "linkedin": "#",
-    "certifications": ["Boxing Coach L3", "WAKO Certified"]
-  },
-  {
+      {
     "id": 6,
     "name": "Sneha Pillai",
     "role": "Zumba & Dance Fitness",

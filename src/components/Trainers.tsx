@@ -40,13 +40,13 @@ export default function Trainers() {
           </motion.p>
         </div>
 
-        <div className="max-w-md mx-auto">
-          {filtered.slice(0, 1).map((trainer, i) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {filtered.map((trainer, i) => (
             <motion.div
               key={trainer.id}
               initial={{ opacity: 0, y: 40 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: i * 0.08 }}
+              transition={{ delay: i * 0.1 }}
               className="group relative overflow-hidden rounded-2xl"
             >
               {/* Image */}

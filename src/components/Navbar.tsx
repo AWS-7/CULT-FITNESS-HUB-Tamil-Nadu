@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Sun, Moon, Menu, X } from 'lucide-react';
+import { Sun, Moon, Menu, X, ArrowLeft } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { useApp } from '../context/AppContext';
 import logoImg from '/images/Screenshot_2026-05-10_140628-removebg-preview.png';
 
@@ -100,6 +101,15 @@ export default function Navbar() {
 
             {/* Right Controls */}
             <div className="flex items-center gap-3">
+              {/* Change Branch Button - positioned slightly lower */}
+              <Link
+                to="/"
+                className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/40 backdrop-blur-sm text-white hover:bg-black/60 transition-colors text-xs font-medium"
+              >
+                <ArrowLeft className="w-3 h-3" />
+                Change Branch
+              </Link>
+
               <button
                 onClick={toggleDarkMode}
                 className={`p-2 rounded-lg transition-all duration-300
@@ -170,7 +180,15 @@ export default function Navbar() {
                     {link.label}
                   </motion.a>
                 ))}
-                <div className="px-6 pt-4">
+                <div className="px-6 pt-4 space-y-3">
+                  <Link
+                    to="/"
+                    onClick={() => setMobileOpen(false)}
+                    className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-black/40 backdrop-blur-sm text-white hover:bg-black/60 transition-colors text-sm font-medium"
+                  >
+                    <ArrowLeft className="w-4 h-4" />
+                    Change Branch
+                  </Link>
                   <button
                     onClick={() => { setBookingModalOpen(true); setMobileOpen(false); }}
                     className="btn-primary w-full text-center"

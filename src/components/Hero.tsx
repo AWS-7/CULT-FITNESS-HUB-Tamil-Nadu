@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
-import { ChevronDown, Play, ArrowLeft } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { ChevronDown, Play } from 'lucide-react';
 import { useState, useEffect, useMemo } from 'react';
 import { useApp } from '../context/AppContext';
 
@@ -71,22 +70,7 @@ export default function Hero() {
       id="home"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Back to Entry Page Button */}
-      <motion.div
-        initial={{ opacity: 0, x: -20 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ delay: 0.5 }}
-        className="absolute top-4 left-4 z-50"
-      >
-        <Link
-          to="/"
-          className="flex items-center gap-2 px-4 py-2 rounded-full bg-black/40 backdrop-blur-sm text-white hover:bg-black/60 transition-colors"
-        >
-          <ArrowLeft className="w-4 h-4" />
-          <span className="text-sm font-medium">Change Branch</span>
-        </Link>
-      </motion.div>
-
+      
       {/* Background Image - Dynamic by branch */}
       <div className="absolute inset-0">
         <img

@@ -70,5 +70,30 @@
     "instagram": "#",
     "linkedin": "#",
     "certifications": ["Zumba Instructor B1", "ACE Group Fitness"]
+  },
+  {
+    "id": 7,
+    "name": "Bala",
+    "role": "Salem Branch Coach",
+    "location": "salem",
+    "experience": "8 years",
+    "speciality": "Strength & Conditioning",
+    "image": "/images/salem-coach-bala.jpg",
+    "phone": "8270968286",
+    "instagram": "#",
+    "linkedin": "#",
+    "certifications": ["NSCA-CSCS", "ACE-CPT"]
+  },
+  {
+    "id": 8,
+    "name": "Ronaldo",
+    "role": "Coonoor Branch Coach",
+    "location": "coonoor",
+    "experience": "10 years",
+    "speciality": "Personal Training & Fitness",
+    "image": "/images/coonoor-coach-ronaldo.jpg",
+    "instagram": "#",
+    "linkedin": "#",
+    "certifications": ["ACE-CPT", "NASM-CES"]
   }
 ]

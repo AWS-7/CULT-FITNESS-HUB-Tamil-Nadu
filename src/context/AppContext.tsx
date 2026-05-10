@@ -26,6 +26,7 @@ export interface Trainer {
   experience: string;
   speciality: string;
   image: string;
+  phone?: string;
   instagram: string;
   linkedin: string;
   certifications: string[];

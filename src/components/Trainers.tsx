@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Instagram, Linkedin, MapPin } from 'lucide-react';
+import { Instagram, Linkedin, MapPin, Phone } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 import { useInView } from '../hooks/useInView';
 
@@ -84,6 +84,14 @@ export default function Trainers() {
                   </div>
                   <h3 className="font-heading text-2xl font-bold text-white">{trainer.name}</h3>
                   <p className="text-gray-300 text-sm">{trainer.role}</p>
+                  
+                  {/* Phone number */}
+                  {trainer.phone && (
+                    <div className="flex items-center gap-1 text-primary text-xs mt-1">
+                      <Phone className="w-3 h-3" />
+                      <span>{trainer.phone}</span>
+                    </div>
+                  )}
 
                   {/* Certs — slide up on hover */}
                   <div className="overflow-hidden max-h-0 group-hover:max-h-20 transition-all duration-500">

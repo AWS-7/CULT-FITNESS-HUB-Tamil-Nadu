@@ -107,12 +107,13 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className={`mt-10 pt-6 border-t ${darkMode ? 'border-white/5' : 'border-gray-200'} flex flex-col sm:flex-row justify-between items-center gap-3 text-sm text-secondary-text`}>
+        <div className={`mt-10 pt-6 border-t ${darkMode ? 'border-white/5' : 'border-gray-200'} flex flex-col items-center gap-3 text-sm text-secondary-text`}>
           <p>© {new Date().getFullYear()} CULT Fitness Hub{currentBranch ? ` — ${currentBranch.name}` : ''}. All rights reserved.</p>
           <div className="flex gap-4">
             <a href="#" className="hover:text-primary transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-primary transition-colors">Terms of Service</a>
           </div>
+          <p className="text-xs">Developed By AWS-Agni Web Solution-9080700642</p>
         </div>
       </div>
     </footer>

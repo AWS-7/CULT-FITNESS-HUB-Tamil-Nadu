@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Award, Shield, TrendingUp, Heart } from 'lucide-react';
+import { Award, Shield, TrendingUp, Heart, User, Star, MessageSquare } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 import { useInView } from '../hooks/useInView';
 import aboutImage from '/images/Screenshot 2026-05-10 140617.png';
@@ -94,7 +94,7 @@ export default function About() {
             </motion.p>
 
             {/* Values Grid */}
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-4 mb-12">
               {values.map((v, i) => (
                 <motion.div
                   key={v.title}
@@ -109,6 +109,48 @@ export default function About() {
                 </motion.div>
               ))}
             </div>
+
+            {/* Team Member Section */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ delay: 0.9 }}
+              className={`p-6 rounded-2xl ${darkMode ? 'bg-bg-black/60' : 'bg-gray-50'} border ${darkMode ? 'border-gray-700' : 'border-gray-200'}`}
+            >
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0">
+                  <div className={`w-16 h-16 rounded-full flex items-center justify-center ${darkMode ? 'bg-primary/20' : 'bg-primary/10'}`}>
+                    <User className="w-8 h-8 text-primary" />
+                  </div>
+                </div>
+                <div className="flex-1">
+                  <h3 className={`text-xl font-bold mb-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                    Flavin Martis
+                  </h3>
+                  <div className="space-y-2">
+                    <div className="flex items-center gap-2 text-sm">
+                      <Star className="w-4 h-4 text-yellow-500" />
+                      <span className={`font-medium ${darkMode ? 'text-white' : 'text-gray-900'}`}>Nutritionist</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-sm">
+                      <Star className="w-4 h-4 text-yellow-500" />
+                      <span className={`font-medium ${darkMode ? 'text-white' : 'text-gray-900'}`}>Fitness Coach</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-sm">
+                      <Star className="w-4 h-4 text-yellow-500" />
+                      <span className={`font-medium ${darkMode ? 'text-white' : 'text-gray-900'}`}>Zumba Master</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-sm">
+                      <MessageSquare className="w-4 h-4 text-primary" />
+                      <span className={`font-medium ${darkMode ? 'text-white' : 'text-gray-900'}`}>Counselor</span>
+                    </div>
+                  </div>
+                  <div className="mt-3 text-xs text-gray-500">
+                    <p>Posted on May 5, 2026</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
           </div>
         </div>
       </div>

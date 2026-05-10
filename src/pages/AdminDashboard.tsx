@@ -51,22 +51,22 @@ export default function AdminDashboard() {
   };
 
   const branchData = [
-    { name: 'Salem', revenue: 1245000, members: 720, growth: 22.3, rating: 4.7 },
+    { name: 'Selas', revenue: 1245000, members: 720, growth: 22.3, rating: 4.7 },
     { name: 'Coonoor', revenue: 895000, members: 480, growth: 15.8, rating: 4.5 },
     { name: 'Manjoor', revenue: 707500, members: 320, growth: 12.1, rating: 4.4 }
   ];
 
   const topPerformers = [
-    { name: 'Bala', branch: 'Salem', sessions: 156, rating: 4.9, revenue: 234000 },
+    { name: 'Bala', branch: 'Selas', sessions: 156, rating: 4.9, revenue: 234000 },
     { name: 'Ronaldo', branch: 'Coonoor', sessions: 142, rating: 4.8, revenue: 198000 },
     { name: 'Rajesh', branch: 'Manjoor', sessions: 128, rating: 4.7, revenue: 187000 }
   ];
 
   const recentActivities = [
-    { type: 'new_member', name: 'Kumar V', branch: 'Salem', time: '2 mins ago' },
+    { type: 'new_member', name: 'Kumar V', branch: 'Selas', time: '2 mins ago' },
     { type: 'class_booked', name: 'Yoga Class', branch: 'Coonoor', time: '15 mins ago' },
     { type: 'payment', name: '₹4,999', branch: 'Manjoor', time: '1 hour ago' },
-    { type: 'trainer_rating', name: 'Bala - 5★', branch: 'Salem', time: '2 hours ago' }
+    { type: 'trainer_rating', name: 'Bala - 5★', branch: 'Selas', time: '2 hours ago' }
   ];
 
   return (
@@ -104,7 +104,7 @@ export default function AdminDashboard() {
                   } border`}
                 >
                   <option value="all">All Branches</option>
-                  <option value="salem">Salem</option>
+                  <option value="selas">Selas</option>
                   <option value="coonoor">Coonoor</option>
                   <option value="manjoor">Manjoor</option>
                 </select>

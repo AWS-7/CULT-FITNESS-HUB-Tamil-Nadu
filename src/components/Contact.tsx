@@ -311,7 +311,7 @@ export default function Contact() {
                 </div>
                 <div className="rounded-2xl overflow-hidden h-48">
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125426.37461254226!2d78.06225824316406!3d11.664304199999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3babf1cad579c351%3A0x8d5d7b2f4e949879!2sSalem%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1620000000000"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125426.37461254226!2d78.06225824316406!3d11.664304199999997!2m3!1f0!2f0!3f0!3m2!1i1024%2i768!4f13.1!3m3!1m2!1s0x3babf1cad579c351%3A0x8d5d7b2f4e949879!2sSelas%2C%20Nilgiris!5e0!3m2!1sen%2sin!4v1620000000000"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}

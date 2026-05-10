@@ -107,7 +107,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
   const [trainers, setTrainers] = useState<Trainer[]>(trainersData);
   const [programs, setPrograms] = useState<Program[]>(programsData);
   const [bookings, setBookings] = useState<Booking[]>(bookingsData);
-  const [visitorStats, setVisitorStats] = useState<{ total: number; byBranch: Record<string, number> }>({ total: 0, byBranch: { salem: 0, coonoor: 0, manjoor: 0 } });
+  const [visitorStats, setVisitorStats] = useState<{ total: number; byBranch: Record<string, number> }>({ total: 0, byBranch: { selas: 0, coonoor: 0, manjoor: 0 } });
   const [bookingModalOpen, setBookingModalOpen] = useState(false);
 
   useEffect(() => {

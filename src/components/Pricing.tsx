@@ -211,7 +211,7 @@ export default function Pricing() {
         >
           <div className="grid md:grid-cols-3 gap-6 text-sm">
             <div>
-              <h4 className={`font-semibold mb-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>Timings (Coonoor & Salem)</h4>
+              <h4 className={`font-semibold mb-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>Timings (Coonoor & Selas)</h4>
               <div className="space-y-1 text-secondary-text">
                 <p>Morning: 6:00 AM – 10:00 AM</p>
                 <p>Evening: 4:00 PM – 9:00 PM</p>

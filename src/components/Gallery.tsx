@@ -56,7 +56,7 @@ export default function Gallery() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   
   const galleryImages = useMemo(() => 
-    currentBranch?.id === 'salem' ? salemGalleryImages : 
+    currentBranch?.id === 'selas' ? salemGalleryImages : 
     currentBranch?.id === 'manjoor' ? manjoorGalleryImages : 
     currentBranch?.id === 'coonoor' ? coonoorGalleryImages :
     generalGalleryImages,

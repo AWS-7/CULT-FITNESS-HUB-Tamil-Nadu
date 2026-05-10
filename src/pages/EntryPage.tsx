@@ -104,7 +104,7 @@ export default function EntryPage() {
                   {(() => {
                     // Show specific branch coaches
                     const branchTrainers = {
-                      'salem': trainers.find(t => t.name === 'Bala'),
+                      'selas': trainers.find(t => t.name === 'Bala'),
                       'coonoor': trainers.find(t => t.name === 'Ronaldo'),
                       'manjoor': trainers.find(t => t.name === 'Rajesh')
                     };

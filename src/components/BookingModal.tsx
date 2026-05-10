@@ -1,13 +1,12 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, CheckCircle, User, Phone, MapPin, Dumbbell } from 'lucide-react';
+import { X, User, Phone, MapPin, Dumbbell } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 
 export default function BookingModal() {
-  const { bookingModalOpen, setBookingModalOpen, locations, programs, addBooking, darkMode, currentBranch } = useApp();
+  const { bookingModalOpen, setBookingModalOpen, locations, programs, darkMode, currentBranch } = useApp();
   const [form, setForm] = useState({ name: '', phone: '', location: currentBranch?.id || '', program: '' });
   const [errors, setErrors] = useState<Record<string, string>>({});
-  const [success, setSuccess] = useState(false);
 
   useEffect(() => {
     if (bookingModalOpen && currentBranch) {
@@ -28,13 +27,30 @@ export default function BookingModal() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!validate()) return;
-    addBooking(form);
-    setSuccess(true);
-    setTimeout(() => {
-      setSuccess(false);
-      setBookingModalOpen(false);
-      setForm({ name: '', phone: '', location: '', program: '' });
-    }, 2500);
+    
+    // Get location and program names for the message
+    const locationName = locations.find(l => l.id === form.location)?.name || form.location;
+    const programName = programs.find(p => p.name === form.program)?.name || form.program;
+    
+    // Create WhatsApp message
+    const message = encodeURIComponent(
+      `🏋️‍♂️ *CULT Fitness Hub - Free Trial Request*\n\n` +
+      `*Name:* ${form.name}\n` +
+      `*Phone:* ${form.phone}\n` +
+      `*Location:* ${locationName}\n` +
+      `*Program:* ${programName}\n\n` +
+      `I'm interested in booking a free trial session. Please contact me to schedule an appointment.`
+    );
+    
+    // WhatsApp number (you can change this to your business WhatsApp number)
+    const whatsappNumber = '9080700642'; // From the footer
+    
+    // Open WhatsApp with pre-filled message
+    window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
+    
+    // Close modal after opening WhatsApp
+    setBookingModalOpen(false);
+    setForm({ name: '', phone: '', location: '', program: '' });
   };
 
   const inputClass = (field: string) =>
@@ -81,24 +97,7 @@ export default function BookingModal() {
 
             {/* Content */}
             <div className="p-6 overflow-y-auto">
-              <AnimatePresence mode="wait">
-                {success ? (
-                  <motion.div
-                    key="success"
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    className="py-8 flex flex-col items-center text-center"
-                  >
-                    <CheckCircle className="w-16 h-16 text-green-500 mb-4" />
-                    <h3 className={`font-heading text-2xl font-bold mb-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-                      Booking Confirmed!
-                    </h3>
-                    <p className="text-secondary-text text-sm">
-                      We'll contact you at {form.phone} within 24 hours to confirm your free trial session.
-                    </p>
-                  </motion.div>
-                ) : (
-                  <motion.form key="form" onSubmit={handleSubmit} className="space-y-4">
+              <motion.form onSubmit={handleSubmit} className="space-y-4">
                     {/* Name */}
                     <div>
                       <label className={`block text-sm font-medium mb-1.5 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
@@ -170,14 +169,12 @@ export default function BookingModal() {
                       type="submit"
                       className="btn-primary w-full py-3.5 mt-2"
                     >
-                      Book My Free Trial
+                      Book My Free Trial via WhatsApp
                     </motion.button>
                     <p className="text-center text-secondary-text text-xs">
-                      No commitment required. We'll call you to confirm.
+                      Click to open WhatsApp with pre-filled message
                     </p>
                   </motion.form>
-                )}
-              </AnimatePresence>
             </div>
             </motion.div>
           </div>

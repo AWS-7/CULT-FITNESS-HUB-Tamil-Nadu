@@ -101,13 +101,14 @@ export default function Navbar() {
 
             {/* Right Controls */}
             <div className="flex items-center gap-3">
-              {/* Change Branch Button - positioned slightly lower */}
+              {/* Change Branch Button - visible on all devices */}
               <Link
                 to="/"
-                className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/40 backdrop-blur-sm text-white hover:bg-black/60 transition-colors text-xs font-medium"
+                className="flex items-center gap-1.5 px-2 py-1.5 rounded-full bg-black/40 backdrop-blur-sm text-white hover:bg-black/60 transition-colors text-xs font-medium"
               >
-                <ArrowLeft className="w-3 h-3" />
-                Change Branch
+                <ArrowLeft className="w-3 h-3 flex-shrink-0" />
+                <span className="hidden sm:inline">Change Branch</span>
+                <span className="sm:hidden">Branch</span>
               </Link>
 
               <button

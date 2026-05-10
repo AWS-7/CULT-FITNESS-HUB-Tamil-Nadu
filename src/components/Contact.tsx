@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Send, Phone, Mail, MapPin } from 'lucide-react';
+import { Send, Phone, Mail, MapPin, MessageSquare, Clock, Star, TrendingUp, Users, Zap } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 import { useInView } from '../hooks/useInView';
 import ContactModal from './ContactModal';
@@ -28,177 +28,310 @@ export default function Contact() {
     }`;
 
   return (
-    <section id="contact" className={`py-24 ${darkMode ? 'bg-card-grey' : 'bg-white'}`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div ref={ref} className="text-center mb-16">
-          <motion.span
-            initial={{ opacity: 0 }}
-            animate={inView ? { opacity: 1 } : {}}
-            className="text-primary text-sm font-semibold tracking-widest uppercase"
+    <section id="contact" className={`py-20 ${darkMode ? 'bg-bg-black' : 'bg-gray-50'} relative overflow-hidden`}>
+      {/* Background decoration */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-20 left-10 w-64 h-64 bg-primary rounded-full blur-3xl" />
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-orange-500 rounded-full blur-3xl" />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Header with trending badge */}
+        <div ref={ref} className="text-center mb-20">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={inView ? { opacity: 1, scale: 1 } : {}}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-primary/20 to-orange-500/20 border border-primary/30 mb-6"
           >
-            Get In Touch
-          </motion.span>
+            <TrendingUp className="w-4 h-4 text-primary" />
+            <span className="text-primary text-sm font-semibold">Trending Contact</span>
+            <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+          </motion.div>
+
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.1 }}
-            className={`section-title mt-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}
+            className={`text-5xl md:text-6xl font-bold mb-6 ${darkMode ? 'text-white' : 'text-gray-900'}`}
           >
-            Contact <span className="text-gradient">Us</span>
+            Get In <span className="bg-gradient-to-r from-primary to-orange-500 bg-clip-text text-transparent">Touch</span>
           </motion.h2>
+          
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ delay: 0.2 }}
+            className="text-gray-500 text-lg max-w-3xl mx-auto leading-relaxed"
+          >
+            Ready to start your fitness journey? Our expert team is here to help you achieve your goals with personalized guidance and support.
+          </motion.p>
+
+          {/* Stats */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ delay: 0.3 }}
+            className="flex items-center justify-center gap-8 mt-8"
+          >
+            <div className="flex items-center gap-2">
+              <Users className="w-5 h-5 text-primary" />
+              <span className="text-2xl font-bold text-primary">500+</span>
+              <span className="text-gray-500">Happy Clients</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Star className="w-5 h-5 text-yellow-500" />
+              <span className="text-2xl font-bold text-yellow-500">4.9</span>
+              <span className="text-gray-500">Rating</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Zap className="w-5 h-5 text-orange-500" />
+              <span className="text-2xl font-bold text-orange-500">24/7</span>
+              <span className="text-gray-500">Support</span>
+            </div>
+          </motion.div>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
-          {/* Form */}
-          <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ delay: 0.2 }}
-          >
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="grid sm:grid-cols-2 gap-4">
+        {/* Main Content Grid */}
+        <div className="grid lg:grid-cols-3 gap-8">
+          {/* Contact Form */}
+          <div className="lg:col-span-2">
+            <motion.div
+              initial={{ opacity: 0, x: -60 }}
+              animate={inView ? { opacity: 1, x: 0 } : {}}
+              transition={{ delay: 0.4, type: "spring", stiffness: 100 }}
+              whileHover={{ y: -5 }}
+              className={`relative overflow-hidden rounded-3xl ${
+                darkMode 
+                  ? 'bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-xl border border-gray-700/50' 
+                  : 'bg-gradient-to-br from-white/70 to-white/50 backdrop-blur-xl border border-gray-200/50'
+              } shadow-2xl`}
+            >
+              {/* Form Header */}
+              <div className="p-8 border-b border-gray-200/20">
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-r from-primary to-orange-500 flex items-center justify-center">
+                    <MessageSquare className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h3 className={`text-2xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                      Send us a Message
+                    </h3>
+                    <p className="text-gray-500 text-sm">We'll respond within 24 hours</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Form Body */}
+              <form onSubmit={handleSubmit} className="p-8 space-y-6">
+                <div className="grid sm:grid-cols-2 gap-6">
+                  <div>
+                    <label className={`block text-sm font-semibold mb-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                      Your Name *
+                    </label>
+                    <input
+                      className={`w-full px-4 py-3 rounded-xl border transition-all duration-300 outline-none text-sm ${
+                        darkMode
+                          ? 'bg-gray-800/50 border-gray-700 text-white placeholder-gray-500 focus:border-primary focus:shadow-glow-orange'
+                          : 'bg-gray-50 border-gray-200 text-gray-900 placeholder-gray-400 focus:border-primary focus:ring-2 focus:ring-primary/20'
+                      }`}
+                      placeholder="John Doe"
+                      value={form.name}
+                      onChange={e => setForm(p => ({ ...p, name: e.target.value }))}
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label className={`block text-sm font-semibold mb-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                      Phone Number *
+                    </label>
+                    <input
+                      className={`w-full px-4 py-3 rounded-xl border transition-all duration-300 outline-none text-sm ${
+                        darkMode
+                          ? 'bg-gray-800/50 border-gray-700 text-white placeholder-gray-500 focus:border-primary focus:shadow-glow-orange'
+                          : 'bg-gray-50 border-gray-200 text-gray-900 placeholder-gray-400 focus:border-primary focus:ring-2 focus:ring-primary/20'
+                      }`}
+                      placeholder="+91 98765 43210"
+                      value={form.phone}
+                      onChange={e => setForm(p => ({ ...p, phone: e.target.value }))}
+                      required
+                    />
+                  </div>
+                </div>
+
                 <div>
-                  <label className={`block text-sm font-medium mb-1.5 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                    Full Name
+                  <label className={`block text-sm font-semibold mb-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                    Email Address *
                   </label>
                   <input
-                    className={inputClass}
-                    placeholder="John Doe"
-                    value={form.name}
-                    onChange={e => setForm(p => ({ ...p, name: e.target.value }))}
+                    type="email"
+                    className={`w-full px-4 py-3 rounded-xl border transition-all duration-300 outline-none text-sm ${
+                      darkMode
+                        ? 'bg-gray-800/50 border-gray-700 text-white placeholder-gray-500 focus:border-primary focus:shadow-glow-orange'
+                        : 'bg-gray-50 border-gray-200 text-gray-900 placeholder-gray-400 focus:border-primary focus:ring-2 focus:ring-primary/20'
+                    }`}
+                    placeholder="you@example.com"
+                    value={form.email}
+                    onChange={e => setForm(p => ({ ...p, email: e.target.value }))}
                     required
                   />
                 </div>
+
                 <div>
-                  <label className={`block text-sm font-medium mb-1.5 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                    Phone
+                  <label className={`block text-sm font-semibold mb-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                    Your Message *
                   </label>
-                  <input
-                    className={inputClass}
-                    placeholder="+91 98765 43210"
-                    value={form.phone}
-                    onChange={e => setForm(p => ({ ...p, phone: e.target.value }))}
+                  <textarea
+                    rows={4}
+                    className={`w-full px-4 py-3 rounded-xl border transition-all duration-300 outline-none text-sm resize-none ${
+                      darkMode
+                        ? 'bg-gray-800/50 border-gray-700 text-white placeholder-gray-500 focus:border-primary focus:shadow-glow-orange'
+                        : 'bg-gray-50 border-gray-200 text-gray-900 placeholder-gray-400 focus:border-primary focus:ring-2 focus:ring-primary/20'
+                    }`}
+                    placeholder="Tell us about your fitness goals and how we can help..."
+                    value={form.message}
+                    onChange={e => setForm(p => ({ ...p, message: e.target.value }))}
+                    required
+                  />
+                </div>
+
+                <motion.button
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  type="submit"
+                  className="w-full py-4 rounded-xl bg-gradient-to-r from-primary to-orange-500 text-white font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-primary/25 flex items-center justify-center gap-3"
+                >
+                  <Send className="w-5 h-5" />
+                  Send Message
+                  <Zap className="w-4 h-4" />
+                </motion.button>
+              </form>
+            </motion.div>
+          </div>
+
+          {/* Contact Info Cards */}
+          <div className="space-y-6">
+            {/* Quick Contact Card */}
+            <motion.div
+              initial={{ opacity: 0, y: 60 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ delay: 0.5, type: "spring", stiffness: 100 }}
+              whileHover={{ y: -5 }}
+              className={`relative overflow-hidden rounded-3xl ${
+                darkMode 
+                  ? 'bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-xl border border-gray-700/50' 
+                  : 'bg-gradient-to-br from-white/70 to-white/50 backdrop-blur-xl border border-gray-200/50'
+              } shadow-2xl p-8`}
+            >
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-r from-green-500 to-emerald-500 flex items-center justify-center">
+                  <Phone className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h3 className={`text-xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                    Quick Contact
+                  </h3>
+                  <p className="text-gray-500 text-sm">Call us anytime</p>
+                </div>
+              </div>
+
+              <div className="space-y-4">
+                {currentBranch ? (
+                  <>
+                    <div className={`p-4 rounded-xl ${darkMode ? 'bg-gray-800/50' : 'bg-gray-50'}`}>
+                      <div className="flex items-center gap-2 mb-2">
+                        <span className="bg-primary text-white text-xs font-bold px-2 py-1 rounded-full">
+                          {currentBranch.name}
+                        </span>
+                      </div>
+                      <div className="space-y-3">
+                        <a href={`tel:${currentBranch.phone}`} className="flex items-center gap-3 text-sm hover:text-primary transition-colors">
+                          <Phone className="w-4 h-4" />
+                          <span>{currentBranch.phone}</span>
+                        </a>
+                        <a href={`mailto:${currentBranch.email}`} className="flex items-center gap-3 text-sm hover:text-primary transition-colors">
+                          <Mail className="w-4 h-4" />
+                          <span>{currentBranch.email}</span>
+                        </a>
+                        <div className="flex items-start gap-3 text-sm">
+                          <MapPin className="w-4 h-4 mt-0.5" />
+                          <span>{currentBranch.address}</span>
+                        </div>
+                        <div className="flex items-center gap-3 text-sm">
+                          <Clock className="w-4 h-4" />
+                          <span>{currentBranch.hours}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </>
+                ) : (
+                  locations.map(loc => (
+                    <div key={loc.id} className={`p-4 rounded-xl ${darkMode ? 'bg-gray-800/50' : 'bg-gray-50'}`}>
+                      <h4 className={`font-bold mb-3 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                        {loc.name} Branch
+                      </h4>
+                      <div className="space-y-2">
+                        <a href={`tel:${loc.phone}`} className="flex items-center gap-2 text-sm hover:text-primary transition-colors">
+                          <Phone className="w-3 h-3" />
+                          <span>{loc.phone}</span>
+                        </a>
+                        <a href={`mailto:${loc.email}`} className="flex items-center gap-2 text-sm hover:text-primary transition-colors">
+                          <Mail className="w-3 h-3" />
+                          <span>{loc.email}</span>
+                        </a>
+                      </div>
+                    </div>
+                  ))
+                )}
+              </div>
+            </motion.div>
+
+            {/* Map Card */}
+            <motion.div
+              initial={{ opacity: 0, y: 80 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ delay: 0.6, type: "spring", stiffness: 100 }}
+              whileHover={{ y: -5 }}
+              className={`relative overflow-hidden rounded-3xl ${
+                darkMode 
+                  ? 'bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-xl border border-gray-700/50' 
+                  : 'bg-gradient-to-br from-white/70 to-white/50 backdrop-blur-xl border border-gray-200/50'
+              } shadow-2xl`}
+            >
+              <div className="p-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-r from-blue-500 to-indigo-500 flex items-center justify-center">
+                    <MapPin className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h3 className={`text-xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                      Find Us
+                    </h3>
+                    <p className="text-gray-500 text-sm">Visit our locations</p>
+                  </div>
+                </div>
+                <div className="rounded-2xl overflow-hidden h-48">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125426.37461254226!2d78.06225824316406!3d11.664304199999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3babf1cad579c351%3A0x8d5d7b2f4e949879!2sSalem%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1620000000000"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="CULT Fitness Hub Locations"
                   />
                 </div>
               </div>
-
-              <div>
-                <label className={`block text-sm font-medium mb-1.5 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                  Email Address
-                </label>
-                <input
-                  type="email"
-                  className={inputClass}
-                  placeholder="you@example.com"
-                  value={form.email}
-                  onChange={e => setForm(p => ({ ...p, email: e.target.value }))}
-                  required
-                />
-              </div>
-
-              <div>
-                <label className={`block text-sm font-medium mb-1.5 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                  Message
-                </label>
-                <textarea
-                  rows={5}
-                  className={inputClass + ' resize-none'}
-                  placeholder="Tell us about your fitness goals..."
-                  value={form.message}
-                  onChange={e => setForm(p => ({ ...p, message: e.target.value }))}
-                  required
-                />
-              </div>
-
-              <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                type="submit"
-                className="btn-primary w-full flex items-center justify-center gap-2 py-3.5"
-              >
-                <Send className="w-4 h-4" />
-                Send Message
-              </motion.button>
-            </form>
-
-            <ContactModal
-              isOpen={showModal}
-              onClose={handleCloseModal}
-              formData={form}
-            />
-          </motion.div>
-
-          {/* Info + Map */}
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ delay: 0.3 }}
-            className="space-y-6"
-          >
-            {/* Quick contacts — branch-specific */}
-            <div className="space-y-4">
-              {currentBranch ? (
-                <div className={`p-5 rounded-xl ${darkMode ? 'bg-bg-black/50 border border-white/5' : 'bg-gray-50 border border-gray-100'}`}>
-                  <div className="flex items-center gap-2 mb-3">
-                    <span className="bg-primary text-white text-xs font-bold px-2.5 py-1 rounded-full uppercase">
-                      {currentBranch.name}
-                    </span>
-                    <span className="text-secondary-text text-xs">Selected Branch</span>
-                  </div>
-                  <div className="space-y-2.5">
-                    <a href={`tel:${currentBranch.phone}`} className="flex items-center gap-2 text-sm text-secondary-text hover:text-primary transition-colors">
-                      <Phone className="w-4 h-4" /> {currentBranch.phone}
-                    </a>
-                    <a href={`mailto:${currentBranch.email}`} className="flex items-center gap-2 text-sm text-secondary-text hover:text-primary transition-colors">
-                      <Mail className="w-4 h-4" /> {currentBranch.email}
-                    </a>
-                    <span className="flex items-center gap-2 text-sm text-secondary-text">
-                      <MapPin className="w-4 h-4" /> {currentBranch.address}
-                    </span>
-                    <span className="flex items-center gap-2 text-sm text-secondary-text">
-                      <span className="w-4 h-4 flex items-center justify-center text-primary text-xs font-bold">H</span>
-                      {currentBranch.hours}
-                    </span>
-                  </div>
-                </div>
-              ) : (
-                locations.map(loc => (
-                  <div key={loc.id} className={`p-4 rounded-xl ${darkMode ? 'bg-bg-black/50' : 'bg-gray-50'}`}>
-                    <h4 className={`font-heading text-lg font-bold mb-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-                      {loc.name} Branch
-                    </h4>
-                    <div className="flex flex-wrap gap-x-6 gap-y-1">
-                      <a href={`tel:${loc.phone}`} className="flex items-center gap-1.5 text-sm text-secondary-text hover:text-primary transition-colors">
-                        <Phone className="w-3.5 h-3.5" /> {loc.phone}
-                      </a>
-                      <a href={`mailto:${loc.email}`} className="flex items-center gap-1.5 text-sm text-secondary-text hover:text-primary transition-colors">
-                        <Mail className="w-3.5 h-3.5" /> {loc.email}
-                      </a>
-                      <span className="flex items-center gap-1.5 text-sm text-secondary-text">
-                        <MapPin className="w-3.5 h-3.5" /> {loc.address}
-                      </span>
-                    </div>
-                  </div>
-                ))
-              )}
-            </div>
-
-            {/* Map placeholder */}
-            <div className="rounded-2xl overflow-hidden h-52">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125426.37461254226!2d78.06225824316406!3d11.664304199999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3babf1cad579c351%3A0x8d5d7b2f4e949879!2sSalem%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1620000000000"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="CULT Fitness Hub Locations"
-              />
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
         </div>
       </div>
+
+      <ContactModal
+        isOpen={showModal}
+        onClose={handleCloseModal}
+        formData={form}
+      />
     </section>
   );
 }

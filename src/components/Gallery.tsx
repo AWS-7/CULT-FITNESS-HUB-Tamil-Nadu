@@ -25,12 +25,21 @@ const salemGalleryImages = [
 ];
 
 const manjoorGalleryImages = [
-  { id: 201, src: '/images/1778160703576.jpg', category: 'training', title: 'Manjoor Weight Training', likes: 189 },
-  { id: 202, src: '/images/1778160703582.jpg', category: 'equipment', title: 'Manjoor Equipment Zone', likes: 267 },
-  { id: 203, src: '/images/1778160703587.jpg', category: 'studio', title: 'Manjoor Studio Space', likes: 145 },
   { id: 204, src: '/images/1778160703596.jpg', category: 'training', title: 'Manjoor Training Area', likes: 234 },
   { id: 205, src: '/images/1778160703606.jpg', category: 'equipment', title: 'Manjoor Cardio Section', likes: 178 },
   { id: 206, src: '/images/1778160703611.jpg', category: 'studio', title: 'Manjoor Group Fitness', likes: 298 },
+  { id: 207, src: '/images/Screenshot 2026-05-10 133647.png', category: 'training', title: 'Manjoor Workout Session', likes: 156 },
+  { id: 208, src: '/images/Screenshot 2026-05-10 133633.png', category: 'equipment', title: 'Manjoor Equipment Training', likes: 189 },
+  { id: 209, src: '/images/Screenshot 2026-05-10 133627.png', category: 'studio', title: 'Manjoor Fitness Studio', likes: 234 },
+  { id: 210, src: '/images/Screenshot 2026-05-10 133618.png', category: 'training', title: 'Manjoor Strength Training', likes: 167 },
+  { id: 211, src: '/images/Screenshot 2026-05-10 133608.png', category: 'equipment', title: 'Manjoor Gym Equipment', likes: 145 },
+  { id: 212, src: '/images/Screenshot 2026-05-10 133558.png', category: 'studio', title: 'Manjoor Group Class', likes: 298 },
+  { id: 213, src: '/images/Screenshot 2026-05-10 133547.png', category: 'training', title: 'Manjoor Personal Training', likes: 178 },
+  { id: 214, src: '/images/Screenshot 2026-05-10 133538.png', category: 'equipment', title: 'Manjoor Cardio Zone', likes: 234 },
+  { id: 215, src: '/images/Screenshot 2026-05-10 133531.png', category: 'studio', title: 'Manjoor Yoga Session', likes: 189 },
+  { id: 216, src: '/images/Screenshot 2026-05-10 133521.png', category: 'training', title: 'Manjoor HIIT Training', likes: 156 },
+  { id: 217, src: '/images/Screenshot 2026-05-10 133512.png', category: 'equipment', title: 'Manjoor Weight Lifting', likes: 267 },
+  { id: 218, src: '/images/Screenshot 2026-05-10 133505.png', category: 'studio', title: 'Manjoor Fitness Center', likes: 145 },
 ];
 
 const coonoorGalleryImages = [
@@ -54,8 +63,12 @@ export default function Gallery() {
     [currentBranch]
   );
 
-  // Auto-scroll functionality
+  // Auto-scroll functionality - only for mobile
   useEffect(() => {
+    // Only enable auto-scroll on mobile devices (lg breakpoint and below)
+    const isMobile = window.innerWidth < 1024;
+    if (!isMobile) return;
+
     const scrollContainer = scrollContainerRef.current;
     if (!scrollContainer) return;
 
@@ -135,27 +148,23 @@ export default function Gallery() {
           </motion.p>
         </div>
 
-        {/* Auto-scrolling Gallery */}
-        <div 
-          ref={scrollContainerRef}
-          className="overflow-x-auto scrollbar-hide"
-          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-        >
-          <div className="flex gap-6 py-4" style={{ width: 'max-content' }}>
-            {galleryImages.concat(galleryImages).map((image, index) => (
+        {/* Gallery Grid - Desktop / Auto-scrolling Gallery - Mobile */}
+        <div className="hidden lg:block">
+          {/* Desktop Static Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {galleryImages.map((image, index) => (
               <motion.div
-                key={`${image.id}-${index}`}
+                key={image.id}
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={inView ? { opacity: 1, scale: 1 } : {}}
-                transition={{ delay: (index % galleryImages.length) * 0.1, duration: 0.5 }}
-                className="group relative overflow-hidden rounded-xl cursor-pointer flex-shrink-0"
+                transition={{ delay: index * 0.1, duration: 0.5 }}
+                className="group relative overflow-hidden rounded-xl cursor-pointer"
                 whileHover={{ scale: 1.02 }}
-                style={{ width: '320px', height: '256px' }}
               >
                 <img
                   src={image.src}
                   alt={image.title}
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                  className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -169,6 +178,45 @@ export default function Gallery() {
                 </div>
               </motion.div>
             ))}
+          </div>
+        </div>
+
+        <div className="lg:hidden">
+          {/* Mobile Auto-scrolling Gallery */}
+          <div 
+            ref={scrollContainerRef}
+            className="overflow-x-auto scrollbar-hide"
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          >
+            <div className="flex gap-4 py-4" style={{ width: 'max-content' }}>
+              {galleryImages.concat(galleryImages).map((image, index) => (
+                <motion.div
+                  key={`${image.id}-${index}`}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={inView ? { opacity: 1, scale: 1 } : {}}
+                  transition={{ delay: (index % galleryImages.length) * 0.1, duration: 0.5 }}
+                  className="group relative overflow-hidden rounded-xl cursor-pointer flex-shrink-0"
+                  whileHover={{ scale: 1.02 }}
+                  style={{ width: '280px', height: '224px' }}
+                >
+                  <img
+                    src={image.src}
+                    alt={image.title}
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="absolute bottom-4 left-4 right-4">
+                      <h3 className="text-white font-semibold text-sm mb-1">{image.title}</h3>
+                      <div className="flex items-center justify-between">
+                        <span className="text-white/80 text-xs capitalize">{image.category}</span>
+                        <span className="text-white/80 text-xs">{image.likes} likes</span>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

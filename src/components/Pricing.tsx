@@ -209,13 +209,31 @@ export default function Pricing() {
           transition={{ delay: 0.6 }}
           className={`mt-8 p-6 rounded-2xl border ${darkMode ? 'bg-bg-black/50 border-white/5' : 'bg-gray-50 border-gray-100'}`}
         >
-          <div className="grid md:grid-cols-2 gap-6 text-sm">
+          <div className="grid md:grid-cols-3 gap-6 text-sm">
             <div>
-              <h4 className={`font-semibold mb-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>Timings (Coonoor & Selas)</h4>
+              <h4 className={`font-semibold mb-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>Timings (Coonoor & Salem)</h4>
               <div className="space-y-1 text-secondary-text">
                 <p>Morning: 6:00 AM – 10:00 AM</p>
                 <p>Evening: 4:00 PM – 9:00 PM</p>
                 <p className="text-primary font-medium">Timing is flexible • Sunday Holiday</p>
+              </div>
+            </div>
+            <div>
+              <h4 className={`font-semibold mb-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>WhatsApp Support</h4>
+              <div className="space-y-1 text-secondary-text">
+                <p>For inquiries & bookings:</p>
+                <a 
+                  href="https://wa.me/918667336409" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-green-600 hover:text-green-700 font-medium transition-colors"
+                >
+                  <span className="w-4 h-4 bg-green-600 rounded-full flex items-center justify-center">
+                    <span className="text-white text-xs">W</span>
+                  </span>
+                  +91 866 733 6409
+                </a>
+                <p className="text-xs">Click to chat on WhatsApp</p>
               </div>
             </div>
             <div>

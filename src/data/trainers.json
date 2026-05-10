@@ -1,28 +1,4 @@
 [
-      {
-    "id": 3,
-    "name": "Karthik Rajan",
-    "role": "HIIT & Conditioning Coach",
-    "location": "manjoor",
-    "experience": "8 years",
-    "speciality": "HIIT & Cardio",
-    "image": "https://images.pexels.com/photos/1552249/pexels-photo-1552249.jpeg?auto=compress&cs=tinysrgb&w=1200&dpr=1",
-    "instagram": "#",
-    "linkedin": "#",
-    "certifications": ["ACE-CPT", "CrossFit L2"]
-  },
-      {
-    "id": 6,
-    "name": "Sneha Pillai",
-    "role": "Zumba & Dance Fitness",
-    "location": "manjoor",
-    "experience": "5 years",
-    "speciality": "Zumba & Aerobics",
-    "image": "https://images.pexels.com/photos/3822621/pexels-photo-3822621.jpeg?auto=compress&cs=tinysrgb&w=1200&dpr=1",
-    "instagram": "#",
-    "linkedin": "#",
-    "certifications": ["Zumba Instructor B1", "ACE Group Fitness"]
-  },
   {
     "id": 7,
     "name": "Bala",

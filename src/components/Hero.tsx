@@ -5,23 +5,24 @@ import { useApp } from '../context/AppContext';
 
 // Move image arrays outside component to prevent re-creation
 const MANJOOR_IMAGES = [
-  '/images/1778161330002.jpg',
-  '/images/1778161330021.jpg',
-  '/images/1778161330044.jpg',
-  '/images/1778161330067.jpg',
-  '/images/1778161330083.jpg',
-  '/images/1778161330102.jpg',
-  '/images/1778161330117.jpg',
-  '/images/1778161330127.jpg',
-  '/images/1778161330136.jpg',
-  '/images/1778161330146.jpg',
-  '/images/1778161330159.jpg',
-  '/images/1778161330174.jpg',
-  '/images/1778161330188.jpg',
-  '/images/1778161330217.jpg'
+  '/images/1778160703596.jpg',
+  '/images/1778160703606.jpg',
+  '/images/1778160703611.jpg',
+  '/images/Screenshot 2026-05-10 133647.png',
+  '/images/Screenshot 2026-05-10 133633.png',
+  '/images/Screenshot 2026-05-10 133627.png',
+  '/images/Screenshot 2026-05-10 133618.png',
+  '/images/Screenshot 2026-05-10 133608.png',
+  '/images/Screenshot 2026-05-10 133558.png',
+  '/images/Screenshot 2026-05-10 133547.png',
+  '/images/Screenshot 2026-05-10 133538.png',
+  '/images/Screenshot 2026-05-10 133531.png',
+  '/images/Screenshot 2026-05-10 133521.png',
+  '/images/Screenshot 2026-05-10 133512.png',
+  '/images/Screenshot 2026-05-10 133505.png'
 ];
 
-const SALEM_IMAGES = [
+const SELAS_IMAGES = [
   '/images/salem-whatsapp-1.jpg',
   '/images/salem-whatsapp-2.jpg',
   '/images/salem-whatsapp-3.jpg',
@@ -45,14 +46,14 @@ export default function Hero() {
   
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const isManjoor = currentBranch?.id === 'manjoor';
-  const isSalem = currentBranch?.id === 'salem';
+  const isSelas = currentBranch?.id === 'selas';
   
   // Use useMemo to prevent re-creation of images array
   const currentImages = useMemo(() => {
     if (isManjoor) return MANJOOR_IMAGES;
-    if (isSalem) return SALEM_IMAGES;
+    if (isSelas) return SELAS_IMAGES;
     return [];
-  }, [isManjoor, isSalem]);
+  }, [isManjoor, isSelas]);
   
   // Auto-rotate images for branches with multiple images
   useEffect(() => {
@@ -77,8 +78,8 @@ export default function Hero() {
           src={
             currentBranch?.id === 'manjoor'
               ? MANJOOR_IMAGES[currentImageIndex]
-              : currentBranch?.id === 'salem'
-                ? SALEM_IMAGES[currentImageIndex]
+              : currentBranch?.id === 'selas'
+                ? SELAS_IMAGES[currentImageIndex]
                 : 'https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg?auto=compress&cs=tinysrgb&w=1200&dpr=1'
           }
           alt="Gym"
@@ -90,8 +91,8 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-b from-bg-black/80 via-bg-black/60 to-bg-black" />
         <div className="absolute inset-0 bg-gradient-to-r from-bg-black/60 via-transparent to-bg-black/60" />
         
-        {/* Image Indicators for Manjoor and Salem Branches */}
-        {(isManjoor || isSalem) && (
+        {/* Image Indicators for Manjoor and Selas Branches */}
+        {(isManjoor || isSelas) && (
           <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-20">
             {currentImages.map((_: string, index: number) => (
               <button
@@ -133,7 +134,7 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.1 }}
           className="font-heading text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-bold uppercase leading-none tracking-tight mb-4"
         >
-          {currentBranch?.id === 'salem' ? (
+          {currentBranch?.id === 'selas' ? (
             <>
               <span className="text-white">SELAS POWER</span>
               <br />
@@ -155,7 +156,7 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.2 }}
           className="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed"
         >
-          {currentBranch?.id === 'salem'
+          {currentBranch?.id === 'selas'
             ? "Selas Power House - The ultimate fitness destination in Anna Nagar. Premium equipment, personal training, and unmatched results."
             : "Elite training, world-class coaches, and a community that pushes you beyond limits. Your transformation starts here at CULT Fitness Hub."
           }
@@ -168,7 +169,7 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.3 }}
           className="flex flex-wrap justify-center gap-8 mb-12"
         >
-          {(currentBranch?.id === 'salem'
+          {(currentBranch?.id === 'selas'
             ? [
                 { value: '150+', label: 'Active Members' },
                 { value: '1', label: 'Expert Trainer' },

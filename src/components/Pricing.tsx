@@ -97,6 +97,38 @@ const plans = [
     cta: 'Get Personal Coach',
     popular: false,
   },
+  {
+    name: 'PT at Client\'s Home',
+    priceLabel: '₹10,000',
+    period: 'per month',
+    description: 'Personal training sessions at your home',
+    features: [
+      'Trainer visits your home',
+      'Custom home workout plan',
+      'All equipment brought by trainer',
+      'Flexible time slots',
+      'Diet & nutrition guidance',
+      'Weekly progress tracking',
+    ],
+    cta: 'Book Home PT',
+    popular: false,
+  },
+  {
+    name: 'Massage Chair',
+    priceLabel: '₹150',
+    period: 'per session',
+    description: 'Relax and recover with massage chair therapy',
+    features: [
+      'Full body massage chair',
+      'Post-workout recovery',
+      'Stress relief & relaxation',
+      'Improved blood circulation',
+      'Muscle soreness relief',
+      'Available after every workout',
+    ],
+    cta: 'Add Massage',
+    popular: false,
+  },
 ];
 
 export default function Pricing() {

@@ -256,6 +256,19 @@ export default function Contact() {
                         </div>
                       </div>
                     </div>
+                    <div className={`p-4 rounded-xl ${darkMode ? 'bg-gray-800/50' : 'bg-gray-50'} border-t-2 border-primary/30`}>
+                      <p className={`font-semibold text-sm mb-3 ${darkMode ? 'text-white' : 'text-gray-900'}`}>Direct Contact</p>
+                      <div className="space-y-2">
+                        <a href="tel:+918667336409" className="flex items-center gap-3 text-sm hover:text-primary transition-colors">
+                          <Phone className="w-4 h-4 text-green-600" />
+                          <span>+91 866 733 6409 (Flavin Martis)</span>
+                        </a>
+                        <a href="tel:7010535928" className="flex items-center gap-3 text-sm hover:text-primary transition-colors">
+                          <Phone className="w-4 h-4 text-green-600" />
+                          <span>70105 35928 (Arokiadass)</span>
+                        </a>
+                      </div>
+                    </div>
                   </>
                 ) : (
                   locations.map(loc => (

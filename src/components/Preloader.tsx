@@ -10,10 +10,10 @@ export default function Preloader({ onLoadingComplete }: { onLoadingComplete: ()
     const simulateNetworkLoading = async () => {
       try {
         const loadingSteps = [
-          { progress: 25, delay: 100 },
-          { progress: 50, delay: 100 },
-          { progress: 75, delay: 100 },
-          { progress: 100, delay: 100 }
+          { progress: 25, delay: 400 },
+          { progress: 50, delay: 400 },
+          { progress: 75, delay: 400 },
+          { progress: 100, delay: 400 }
         ];
 
         for (const step of loadingSteps) {

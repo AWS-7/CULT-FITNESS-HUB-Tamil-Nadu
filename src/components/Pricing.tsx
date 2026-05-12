@@ -383,7 +383,7 @@ export default function Pricing() {
             </div>
             <div>
               <h4 className={`font-semibold mb-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>WhatsApp Support</h4>
-              <div className="space-y-1 text-secondary-text">
+              <div className="space-y-2 text-secondary-text">
                 <p>For inquiries & bookings:</p>
                 <a 
                   href="https://wa.me/918667336409" 
@@ -394,9 +394,12 @@ export default function Pricing() {
                   <span className="w-4 h-4 bg-green-600 rounded-full flex items-center justify-center">
                     <span className="text-white text-xs">W</span>
                   </span>
-                  +91 866 733 6409
+                  +91 866 733 6409 (Flavin Martis)
                 </a>
                 <p className="text-xs">Click to chat on WhatsApp</p>
+                <div className="pt-2 border-t border-white/10">
+                  <p className="text-sm font-medium">70105 35928 (Arokiadass)</p>
+                </div>
               </div>
             </div>
             <div>

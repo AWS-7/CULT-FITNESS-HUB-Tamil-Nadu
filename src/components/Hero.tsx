@@ -201,7 +201,7 @@ export default function Hero() {
             onClick={() => setBookingModalOpen(true)}
             className="btn-primary text-base px-8 py-4 rounded-xl shadow-glow-orange font-semibold tracking-wide hover:scale-105 active:scale-95 transition-transform"
           >
-            Start Your Journey — Free Trial
+            Join Now
           </button>
 
           <a

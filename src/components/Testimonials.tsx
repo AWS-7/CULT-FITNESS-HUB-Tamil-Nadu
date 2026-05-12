@@ -58,14 +58,11 @@ export default function Testimonials() {
               {/* Photo */}
               <div className="flex flex-col items-center text-center">
                 <div className="relative w-28 h-28 mb-4">
-                  <img
-                    key={t.id}
-                    src={t.image}
-                    alt={t.name}
-                    className="w-full h-full rounded-full object-cover ring-4 ring-primary/30"
-                    loading="lazy"
-                    onError={(e) => { e.currentTarget.src = 'https://via.placeholder.com/200x200/FF6A00/FFFFFF?text=User'; }}
-                  />
+                  <div className="w-full h-full rounded-full object-cover ring-4 ring-primary/30 bg-primary flex items-center justify-center">
+                    <span className="font-heading text-4xl font-bold text-white">
+                      {t.name.charAt(0).toUpperCase()}
+                    </span>
+                  </div>
                   <div className="absolute -bottom-2 -right-2 bg-primary rounded-full p-1.5">
                     <Star className="w-3 h-3 text-white fill-white" />
                   </div>

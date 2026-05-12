@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { useApp } from '../context/AppContext';
+import ParkingSection from '../components/ParkingSection';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import About from '../components/About';
@@ -17,7 +18,8 @@ import WhatsAppButton from '../components/WhatsAppButton';
 
 export default function Home() {
   const [searchParams] = useSearchParams();
-  const { setSelectedBranch, setSelectedLocation, recordVisit } = useApp();
+  const { setSelectedBranch, setSelectedLocation, recordVisit, currentBranch } = useApp();
+  const isCoonoor = currentBranch?.id === 'coonoor';
 
   useEffect(() => {
     const branch = searchParams.get('branch');
@@ -29,7 +31,7 @@ export default function Home() {
       recordVisit(branch || undefined);
       sessionStorage.setItem(sessionKey, 'true');
     }
-  }, [searchParams, setSelectedBranch, setSelectedLocation]); // Remove recordVisit to prevent infinite loop
+  }, [searchParams, setSelectedBranch, setSelectedLocation, currentBranch]); // Remove recordVisit to prevent infinite loop
 
   return (
     <>
@@ -41,7 +43,8 @@ export default function Home() {
         <Gallery />
         <Trainers />
         <Pricing />
-         <BMICalculator />
+        {isCoonoor && <ParkingSection />}
+        <BMICalculator />
         <Testimonials />
         <Contact />
       </main>

@@ -1,52 +1,72 @@
 [
   {
     "id": 1,
-    "name": "Vikram Anand",
-    "location": "all",
+    "name": "Babu",
+    "location": "coonoor",
     "rating": 5,
-    "text": "CULT Fitness Hub completely transformed my life. In 6 months I lost 18kg and gained more confidence than I ever imagined. The trainers here are world-class.",
+    "text": "Best gym in town... I was very happy to workout with Flavin Martis the owner... Fully equipped with imported equipments... Highly recommend",
     "image": "https://images.pexels.com/photos/1212984/pexels-photo-1212984.jpeg?auto=compress&cs=tinysrgb&w=1200&dpr=1",
-    "program": "HIIT Blast",
-    "achievement": "Lost 18kg in 6 months"
+    "program": "General",
+    "achievement": "2 reviews • 1 photo • 3 days ago"
   },
   {
     "id": 2,
-    "name": "Ananya Krishnan",
-    "location": "all",
+    "name": "Movinsha",
+    "location": "coonoor",
     "rating": 5,
-    "text": "The yoga and strength combo at CULT has given me energy I didn't know I had. The guidance here is incredible — patient, knowledgeable, and inspiring.",
+    "text": "I never expected this gym to be such a good one in the town.. getting a metropolitan vibe.. very good ambience with imported equipments.. highly recommend",
     "image": "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=1200&dpr=1",
-    "program": "Yoga Flow",
-    "achievement": "Improved flexibility 200%"
+    "program": "General",
+    "achievement": "3 reviews • 1 photo • 1 week ago"
   },
   {
     "id": 3,
-    "name": "Sanjay Mehta",
-    "location": "all",
+    "name": "Lewis Spiers",
+    "location": "coonoor",
     "rating": 5,
-    "text": "I was skeptical about CrossFit but after 3 months at CULT I'm deadlifting twice my body weight. The community here keeps you accountable and motivated.",
+    "text": "Had a great experience at this gym, very friendly staff, made us feel really welcome. They also have some equipment out on the balcony, so meant we were able to workout in the fresh air without getting too hot!",
     "image": "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1200&dpr=1",
-    "program": "CrossFit",
-    "achievement": "Deadlifts 2x bodyweight"
+    "program": "General",
+    "achievement": "Local Guide • 17 reviews • 2 photos • 26 weeks ago"
   },
   {
     "id": 4,
-    "name": "Lakshmi Subramaniam",
-    "location": "all",
+    "name": "Logesh Wini",
+    "location": "coonoor",
     "rating": 5,
-    "text": "The nutrition coaching combined with personal training is unbeatable. The trainers mapped out a plan that actually works with my lifestyle — no crash diets!",
+    "text": "Training at Cult Fitness Hub has been a solid experience, the place is super clean, well-equipped, and has a motivating vibe. Mr.Flavin is friendly and always welcoming, which makes every session better. Perfect mix of great setup + positive atmosphere. Highly recommended!",
     "image": "https://images.pexels.com/photos/1065084/pexels-photo-1065084.jpeg?auto=compress&cs=tinysrgb&w=1200&dpr=1",
     "program": "Personal Training",
-    "achievement": "Dropped 3 dress sizes"
+    "achievement": "1 review • 2 photos • 33 weeks ago"
   },
   {
     "id": 5,
-    "name": "Rajesh Balasubramanian",
-    "location": "all",
+    "name": "Priyanka Kaushik",
+    "location": "coonoor",
     "rating": 5,
-    "text": "Boxing at CULT is not just a workout — it's therapy. The trainers taught me discipline and mental resilience while getting me the best shape of my life at 45.",
+    "text": "Such a welcoming space! The energy here keeps me coming back every day. The trainers are very supportive and helpful. The entire team really cares about how you feel and the environment is calm and encouraging. Overall a great place to work out- I highly recommend it to everyone who is looking for a place to get fit.",
     "image": "https://images.pexels.com/photos/697509/pexels-photo-697509.jpeg?auto=compress&cs=tinysrgb&w=1200&dpr=1",
-    "program": "Boxing & Combat",
-    "achievement": "Best shape at age 45"
+    "program": "General",
+    "achievement": "1 review • 0 photos • 34 weeks ago"
+  },
+  {
+    "id": 6,
+    "name": "Vidhya Shree",
+    "location": "coonoor",
+    "rating": 5,
+    "text": "I absolutely love training at this gym! The atmosphere is super motivating, and the equipment is up to date. What makes it extra special is the incredible support I get from my personal trainer, Ronaldo. He's beyond dedicated and extremely attentive, always making sure my progress stays on track. If you're serious about fitness and want real results, this is the place to be.",
+    "image": "https://images.pexels.com/photos/1212984/pexels-photo-1212984.jpeg?auto=compress&cs=tinysrgb&w=1200&dpr=1",
+    "program": "Personal Training",
+    "achievement": ""
+  },
+  {
+    "id": 7,
+    "name": "Shiva Prema",
+    "location": "coonoor",
+    "rating": 5,
+    "text": "The body achieves what the mind believes and the pain you feel today will be the strength you feel tomorrow, one of the best gym located at Nilgiris coonoor",
+    "image": "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=1200&dpr=1",
+    "program": "General",
+    "achievement": "1 review • 0 photos • 34 weeks ago"
   }
 ]

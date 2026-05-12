@@ -3,6 +3,132 @@ import { Check, Zap } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 import { useInView } from '../hooks/useInView';
 
+const manjoorPlans = [
+  {
+    name: 'Day Pass',
+    priceLabel: '₹150',
+    period: 'per day',
+    description: 'Single day access — perfect for visitors or trial',
+    features: [
+      'Full gym floor access',
+      'All equipment usage',
+      'Group classes included',
+      'Locker facility',
+      'Shower access',
+    ],
+    cta: 'Book Now',
+    popular: false,
+  },
+  {
+    name: 'Regular',
+    priceLabel: '₹2,000',
+    period: 'Entry + Monthly',
+    description: 'Entry fee ₹1,000 + Monthly fee ₹1,000',
+    features: [
+      'Entry fee: ₹1,000 (one-time)',
+      'Monthly fee: ₹1,000',
+      'Unlimited gym access',
+      'All group classes',
+      'Locker & shower',
+      'Trainer guidance',
+    ],
+    cta: 'Join Now',
+    popular: false,
+  },
+  {
+    name: '1 Month (No Entry)',
+    priceLabel: '₹1,500',
+    period: 'monthly',
+    description: 'Monthly membership without entry fee',
+    features: [
+      '1 month full access',
+      'All equipment & classes',
+      'Locker & shower',
+      'Trainer guidance',
+      'Progress tracking',
+    ],
+    cta: 'Get 1 Month',
+    popular: false,
+  },
+  {
+    name: '3 Months',
+    priceLabel: '₹3,000',
+    period: 'quarterly',
+    description: 'Short-term commitment with full access',
+    features: [
+      '3 months full access',
+      'All equipment & classes',
+      'Locker & shower',
+      'Trainer guidance',
+      'Progress tracking',
+    ],
+    cta: 'Get 3 Months',
+    popular: true,
+  },
+  {
+    name: '6 Months',
+    priceLabel: '₹6,000',
+    period: 'half-yearly',
+    description: 'Best value mid-term plan with savings',
+    features: [
+      '6 months full access',
+      'All equipment & classes',
+      'Locker & shower',
+      'Priority class booking',
+      'Diet consultation',
+    ],
+    cta: 'Join 6 Months',
+    popular: false,
+  },
+  {
+    name: '1 Year',
+    priceLabel: '₹11,000',
+    period: 'annual',
+    description: 'Maximum savings — full year of transformation',
+    features: [
+      '12 months full access',
+      'All equipment & classes',
+      'Locker & shower',
+      'Unlimited PT sessions',
+      'Body composition scan',
+      'Guest passes (2/month)',
+    ],
+    cta: 'Go Annual',
+    popular: false,
+  },
+  {
+    name: 'Personal Training',
+    priceLabel: '₹4,000',
+    period: 'per month',
+    description: 'One-on-one coaching at the gym',
+    features: [
+      'Dedicated expert coach',
+      'Custom workout plans',
+      'Flexible scheduling',
+      'Diet & nutrition tips',
+      'Weekly progress tracking',
+    ],
+    cta: 'Get Personal Coach',
+    popular: false,
+  },
+  {
+    name: 'PT at Client\'s Home',
+    priceLabel: '₹8,000',
+    period: 'per month',
+    description: 'Personal training sessions at your home',
+    features: [
+      'Trainer visits your home',
+      'Custom home workout plan',
+      'All equipment brought by trainer',
+      'Flexible time slots',
+      'Diet & nutrition guidance',
+      'Weekly progress tracking',
+    ],
+    cta: 'Book Home PT',
+    popular: false,
+  },
+];
+
 const plans = [
   {
     name: 'Day Pass',
@@ -132,8 +258,11 @@ const plans = [
 ];
 
 export default function Pricing() {
-  const { darkMode, setBookingModalOpen } = useApp();
+  const { darkMode, setBookingModalOpen, currentBranch } = useApp();
   const { ref, inView } = useInView();
+
+  const isManjoor = currentBranch?.id === 'manjoor';
+  const activePlans = isManjoor ? manjoorPlans : plans;
 
   return (
     <section id="pricing" className={`py-24 ${darkMode ? 'bg-card-grey' : 'bg-white'}`}>
@@ -165,7 +294,7 @@ export default function Pricing() {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
-          {plans.map((plan, i) => (
+          {activePlans.map((plan, i) => (
             <motion.div
               key={plan.name}
               initial={{ opacity: 0, y: 50 }}
@@ -243,7 +372,9 @@ export default function Pricing() {
         >
           <div className="grid md:grid-cols-3 gap-6 text-sm">
             <div>
-              <h4 className={`font-semibold mb-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>Timings (Coonoor & Selas)</h4>
+              <h4 className={`font-semibold mb-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                {isManjoor ? 'Timings (Manjoor)' : 'Timings (Coonoor & Selas)'}
+              </h4>
               <div className="space-y-1 text-secondary-text">
                 <p>Morning: 6:00 AM – 10:00 AM</p>
                 <p>Evening: 4:00 PM – 9:00 PM</p>
@@ -271,8 +402,17 @@ export default function Pricing() {
             <div>
               <h4 className={`font-semibold mb-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>Gym Policy</h4>
               <p className="text-secondary-text">
-                Please keep a separate pair of shoes for workout.
-                <span className="text-red-400 font-medium block mt-1">Outside shoes are NOT allowed.</span>
+                {isManjoor ? (
+                  <>
+                    Keep a separate pair of shoes for workout.
+                    <span className="text-red-400 font-medium block mt-1">Outside shoes are NOT allowed.</span>
+                  </>
+                ) : (
+                  <>
+                    Please keep a separate pair of shoes for workout.
+                    <span className="text-red-400 font-medium block mt-1">Outside shoes are NOT allowed.</span>
+                  </>
+                )}
               </p>
             </div>
           </div>

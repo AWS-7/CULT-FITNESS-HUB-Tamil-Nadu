@@ -98,7 +98,7 @@ export default function Programs() {
               { icon: Dumbbell, value: programs.length, label: 'Programs' },
               { icon: Users, value: '50+', label: 'Expert Trainers' },
               { icon: Clock, value: '24/7', label: 'Gym Access' },
-              { icon: BarChart3, value: '10K+', label: 'Members' },
+              { icon: BarChart3, value: '150+', label: 'Members' },
             ].map((stat, i) => (
               <motion.div
                 key={stat.label}
@@ -210,33 +210,6 @@ export default function Programs() {
               </div>
             </div>
           ))}
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-16 sm:py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-orange-500/20" />
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="font-heading text-3xl sm:text-4xl font-bold text-white mb-4">
-              Ready to Start Your Journey?
-            </h2>
-            <p className="text-white/80 mb-8 max-w-xl mx-auto">
-              Join thousands of members transforming their lives at CULT Fitness Hub. 
-              Book a free trial session today.
-            </p>
-            <button
-              onClick={() => navigate('/home#contact')}
-              className="bg-white text-primary font-semibold px-8 py-4 rounded-xl hover:bg-gray-100 transition-colors shadow-lg"
-            >
-              Book Free Trial
-            </button>
-          </motion.div>
         </div>
       </section>
 

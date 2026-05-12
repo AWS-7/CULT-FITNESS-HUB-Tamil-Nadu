@@ -177,7 +177,7 @@ export default function Hero() {
                 { value: '9000', label: 'Sq Ft Area' },
               ]
             : [
-                { value: '400+', label: 'Active Members' },
+                { value: '150+', label: 'Active Members' },
                 { value: '1', label: 'Expert Trainer' },
                 { value: '8+', label: 'Programs' },
                 { value: '3', label: 'Locations' },

@@ -305,7 +305,15 @@ export default function Contact() {
                 </div>
                 <div className="rounded-2xl overflow-hidden h-48">
                   <iframe
-                    src="https://maps.google.com/maps?q=Coonoor%2C%20Nilgiris%2C%20Tamil%20Nadu&t=&z=12&ie=UTF8&iwloc=&output=embed"
+                    src={
+                      currentBranch?.id === 'manjoor'
+                        ? "https://maps.google.com/maps?q=CULT%20FITNESS%20HUB%2C%20OPPOSITE%20TO%20FINE%20GOLD%2C%20MANJOOR%2C%20Manjoor%2C%20Tamil%20Nadu%20643219&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                        : currentBranch?.id === 'coonoor'
+                        ? "https://maps.google.com/maps?q=81%20Grays%20Hill%2C%20Behind%20Bagaicha%20Restaurant%20Bedfort%2C%20coonoor%2C%20Tamil%20Nadu%20643102&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                        : currentBranch?.id === 'selas'
+                        ? "https://maps.google.com/maps?q=CULT%20FITNESS%20HUB%2C%20No.2%2F344B%2C%20Bazaar%2C%20Selas%2C%20Huligal%2C%20Tamil%20Nadu%20643123&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                        : "https://maps.google.com/maps?q=Coonoor%2C%20Nilgiris%2C%20Tamil%20Nadu&t=&z=12&ie=UTF8&iwloc=&output=embed"
+                    }
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}

@@ -60,18 +60,14 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 lg:h-20">
             {/* Logo */}
-            <a href="#home" className="flex items-center gap-2.5 group">
+            <a href="#home" className="flex items-center gap-2.5 group pl-2">
               <img
                 src={logoImg}
                 alt="CULT Fitness Hub"
-                className="w-9 h-9 rounded-lg object-cover shadow-glow-orange group-hover:shadow-glow-orange-lg transition-all"
+                className="w-14 h-14 rounded-xl object-cover shadow-glow-orange group-hover:shadow-glow-orange-lg transition-all"
                 loading="lazy"
                 decoding="async"
               />
-              <span className="font-heading text-xl font-bold tracking-wider">
-                <span className="text-primary">CULT</span>
-                <span className={darkMode ? 'text-white' : 'text-gray-900'}> FITNESS HUB</span>
-              </span>
             </a>
 
             {/* Desktop Links */}
@@ -156,9 +152,6 @@ export default function Navbar() {
               className={`fixed top-0 right-0 h-full w-72 z-50 ${darkMode ? 'bg-bg-black' : 'bg-white'} shadow-2xl`}
             >
               <div className="flex items-center justify-between p-5 border-b border-white/10">
-                <span className="font-heading text-lg font-bold">
-                  <span className="text-primary">CULT</span> FITNESS HUB
-                </span>
                 <button onClick={() => setMobileOpen(false)} className="p-1">
                   <X className="w-6 h-6" />
                 </button>

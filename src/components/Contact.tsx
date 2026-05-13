@@ -265,7 +265,7 @@ export default function Contact() {
                         </a>
                         <a href="tel:7010535928" className="flex items-center gap-3 text-sm hover:text-primary transition-colors">
                           <Phone className="w-4 h-4 text-green-600" />
-                          <span>70105 35928 (Arokiadass)</span>
+                          <span className="font-bold text-primary">70105 35928 (Arokiadass)</span>
                         </a>
                       </div>
                     </div>

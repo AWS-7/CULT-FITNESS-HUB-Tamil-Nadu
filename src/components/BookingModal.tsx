@@ -169,7 +169,7 @@ export default function BookingModal() {
                       type="submit"
                       className="btn-primary w-full py-3.5 mt-2"
                     >
-                      Book My Free Trial via WhatsApp
+                      Book Now
                     </motion.button>
                     <p className="text-center text-secondary-text text-xs">
                       Click to open WhatsApp with pre-filled message

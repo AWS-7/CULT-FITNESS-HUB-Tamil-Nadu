@@ -398,7 +398,7 @@ export default function Pricing() {
                 </a>
                 <p className="text-xs">Click to chat on WhatsApp</p>
                 <div className="pt-2 border-t border-white/10">
-                  <p className="text-sm font-medium">70105 35928 (Arokiadass)</p>
+                  <p className="text-sm font-medium text-green-600">70105 35928 (Arokiadass)</p>
                 </div>
               </div>
             </div>

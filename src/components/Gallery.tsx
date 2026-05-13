@@ -43,11 +43,17 @@ const manjoorGalleryImages = [
 ];
 
 const coonoorGalleryImages = [
-  { id: 302, src: '/images/Screenshot 2026-05-10 134106.png', category: 'equipment', title: 'Coonoor Equipment Zone', likes: 234 },
-  { id: 303, src: '/images/Screenshot 2026-05-10 134117.png', category: 'studio', title: 'Coonoor Studio Space', likes: 189 },
-  { id: 304, src: '/images/Screenshot 2026-05-10 134132.png', category: 'training', title: 'Coonoor Weight Training', likes: 201 },
-  { id: 305, src: '/images/Screenshot 2026-05-10 134142.png', category: 'equipment', title: 'Coonoor Cardio Section', likes: 156 },
-  { id: 306, src: '/images/Screenshot 2026-05-10 134153.png', category: 'studio', title: 'Coonoor Group Fitness', likes: 267 },
+  { id: 401, src: '/images/coonoor-new-1.png', category: 'equipment', title: 'Coonoor Equipment Zone', likes: 234 },
+  { id: 402, src: '/images/coonoor-new-2.png', category: 'studio', title: 'Coonoor Studio Space', likes: 189 },
+  { id: 403, src: '/images/coonoor-new-3.png', category: 'training', title: 'Coonoor Weight Training', likes: 201 },
+  { id: 404, src: '/images/coonoor-new-4.png', category: 'equipment', title: 'Coonoor Cardio Section', likes: 156 },
+  { id: 405, src: '/images/coonoor-new-5.png', category: 'studio', title: 'Coonoor Group Fitness', likes: 267 },
+  { id: 406, src: '/images/coonoor-new-6.png', category: 'training', title: 'Coonoor Workout Area', likes: 198 },
+  { id: 407, src: '/images/coonoor-new-7.png', category: 'equipment', title: 'Coonoor Gym Floor', likes: 245 },
+  { id: 408, src: '/images/coonoor-new-8.png', category: 'studio', title: 'Coonoor Fitness Studio', likes: 178 },
+  { id: 409, src: '/images/coonoor-new-9.png', category: 'training', title: 'Coonoor Strength Training', likes: 289 },
+  { id: 410, src: '/images/coonoor-new-10.png', category: 'equipment', title: 'Coonoor Exercise Zone', likes: 167 },
+  { id: 411, src: '/images/coonoor-new-11.png', category: 'studio', title: 'Coonoor Training Center', likes: 234 },
 ];
 
 export default function Gallery() {

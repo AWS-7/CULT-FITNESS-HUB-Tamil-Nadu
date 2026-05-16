@@ -75,7 +75,7 @@ export default function Trainers() {
                   <div className="absolute top-4 right-4">
                     <div className="flex items-center gap-1 px-3 py-1 rounded-full bg-yellow-500/90 backdrop-blur-sm">
                       <Star className="w-3 h-3 text-white fill-white" />
-                      <span className="text-white text-xs font-bold">4.9</span>
+                      <span className="text-white text-xs font-bold">5</span>
                     </div>
                   </div>
                 </div>

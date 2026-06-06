@@ -12,6 +12,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import WhatsAppButton from '../components/WhatsAppButton';
 import BookingModal from '../components/BookingModal';
+import MassageChairSection from '../components/MassageChairSection';
 
 const iconMap: Record<string, React.ElementType> = {
   Dumbbell, Zap, Wind, Target, Activity, Music, Leaf, User,
@@ -314,6 +315,9 @@ export default function BranchDetail() {
           </div>
         </div>
       </section>
+
+      {/* Massage Chair - Coonoor Only */}
+      {branchId === 'coonoor' && <MassageChairSection />}
 
       {/* CTA */}
       <section className="py-20 relative overflow-hidden">

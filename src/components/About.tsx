@@ -1,8 +1,13 @@
-import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Award, Shield, TrendingUp, Heart, User, Star, MessageSquare } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 import { useInView } from '../hooks/useInView';
-import aboutImage from '/images/Screenshot 2026-05-10 140617.png';
+
+const aboutImages = [
+  '/images/Screenshot 2026-05-10 140617.png',
+  '/images/massage-chair-new.jpg',
+];
 
 const values = [
   { icon: Award, title: 'World-Class Coaches', desc: 'Internationally certified trainers with 5–15 years of professional experience.' },
@@ -14,6 +19,14 @@ const values = [
 export default function About() {
   const { darkMode } = useApp();
   const { ref, inView } = useInView();
+  const [currentImg, setCurrentImg] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImg((prev) => (prev + 1) % aboutImages.length);
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <section id="about" className={`py-24 relative overflow-hidden ${darkMode ? 'bg-card-grey' : 'bg-white'}`}>
@@ -30,14 +43,20 @@ export default function About() {
             transition={{ duration: 0.8 }}
             className="relative"
           >
-            <div className="relative rounded-2xl overflow-hidden">
-              <img
-                src={aboutImage}
-                alt="About CULT"
-                className="w-full h-96 lg:h-[500px] object-cover"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent" />
+            <div className="relative rounded-2xl overflow-hidden bg-neutral-900">
+              <AnimatePresence mode="wait">
+                <motion.img
+                  key={currentImg}
+                  src={aboutImages[currentImg]}
+                  alt="About CULT"
+                  className="w-full max-h-[500px] object-contain"
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -20 }}
+                  transition={{ duration: 0.3 }}
+                />
+              </AnimatePresence>
+              <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent z-10 pointer-events-none" />
             </div>
 
             {/* Floating badge */}

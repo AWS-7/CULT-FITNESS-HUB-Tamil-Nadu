@@ -54,6 +54,9 @@ const coonoorGalleryImages = [
   { id: 409, src: '/images/coonoor-new-9.png', category: 'training', title: 'Coonoor Strength Training', likes: 289 },
   { id: 410, src: '/images/coonoor-new-10.png', category: 'equipment', title: 'Coonoor Exercise Zone', likes: 167 },
   { id: 411, src: '/images/coonoor-new-11.png', category: 'studio', title: 'Coonoor Training Center', likes: 234 },
+  { id: 412, src: 'https://images.pexels.com/photos/6628651/pexels-photo-6628651.jpeg?auto=compress&cs=tinysrgb&w=800&dpr=1', category: 'massage', title: 'Massage Chair Zone', likes: 312 },
+  { id: 413, src: 'https://images.pexels.com/photos/3757943/pexels-photo-3757943.jpeg?auto=compress&cs=tinysrgb&w=800&dpr=1', category: 'massage', title: 'Relaxation Area', likes: 278 },
+  { id: 414, src: 'https://images.pexels.com/photos/5796693/pexels-photo-5796693.jpeg?auto=compress&cs=tinysrgb&w=800&dpr=1', category: 'massage', title: 'Recovery & Wellness', likes: 245 },
 ];
 
 export default function Gallery() {

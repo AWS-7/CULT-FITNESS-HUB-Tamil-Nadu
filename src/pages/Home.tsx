@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { useApp } from '../context/AppContext';
 import ParkingSection from '../components/ParkingSection';
+import MassageChairSection from '../components/MassageChairSection';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import About from '../components/About';
@@ -44,6 +45,7 @@ export default function Home() {
         <Trainers />
         <Pricing />
         {isCoonoor && <ParkingSection />}
+        {isCoonoor && <MassageChairSection />}
         <BMICalculator />
         <Testimonials />
         <Contact />
